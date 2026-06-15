@@ -1,0 +1,240 @@
+<app-header></app-header>
+
+
+<div class="container mx-auto p-8 max-w-5xl bg-white shadow-lg rounded-lg">
+
+  <div style="text-align: right; margin-bottom: 15px; display: flex; justify-content: flex-end; align-items: center; gap: 8px;">
+  <span style="font-size: 20px; color: orange;">🌐</span>
+  
+  <select (change)="toggleLanguage($event)" 
+          style="background-color: white; color: orange; border: 2px solid orange; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+    <option [selected]="!isTamil" value="en">English</option>
+    <option [selected]="isTamil" value="ta">தமிழ்</option>
+  </select>
+</div>
+
+
+
+  <!-- English Content -->
+  <div *ngIf="!isTamil" class="user-agreement">
+  <h1 class="text-4xl font-bold mb-8 text-center text-orange-500">
+    <b style="text-decoration: underline;">BOOK MY NURSE - USER AGREEMENT & TERMS OF SERVICE</b>
+  </h1>
+
+  <div style="margin-bottom: 15px;">
+    <p><strong>Effective Date:</strong> July 23, 2025</p>
+  </div>
+
+  <div style="margin-bottom: 15px;">
+    <p>Welcome to <strong>Book My Nurse</strong>. This comprehensive User Agreement and Terms of Service ("Agreement") governs your access to and use of the services provided by Book My Nurse ("Book My Nurse," "the Company," "we," "us," or "our"). By engaging our services or continuing to use our platform, you explicitly consent to and accept all terms and conditions set forth herein. Please read this Agreement carefolly before proceeding.</p>
+  </div>
+
+  <div style="margin-bottom: 15px;">
+    <p><strong>Contact Us:</strong>
+      (<a href="mailto:support&#64;bookmynurse.com">support&#64;bookmynurse.com</a> |
+      <a href="tel:9943234569" onclick="gtag_report_conversion(); return true;">99432 34569</a>)
+    </p>
+  </div>
+
+  <div style="white-space: pre-line;">
+    <p class="section-title"><strong>Acceptance of Terms</strong></p>
+    <p>Your engagement with Book My Nurse's services constitutes your foll and unconditional acceptance of this Agreement including our Privacy Policy and Disclaimer. If you do not agree with any part of these terms, you must not use our services.</p>
+
+    <p class="section-title"><strong>Service Provision</strong></p>
+    <p>Book My Nurse provides professional nursing services at your home, as detailed in the service plan opted for and subject to patient conditions and doctor's advice. We adopt best practices in healthcare.</p>
+     <ol>
+    <li><p><b>Scope of Service:</b> Our nurses provide nursing-related care as per the agreed service plan. They are not medical practitioners; regolar consoltation with your doctor for the patient's health is essential.</p></li>
+    <li><p><b>Patient Supervision:</b> A relative of the patient must be resident on the premises throughout the service period. This relative's mobile number must be provided to the nurse and be easily accessible for emergencies.</p></li>
+    <li><p><b>Nurse Conduct & Treatment:</b> Nurses are professionals and must be treated with decorum and respect. They are not to be engaged for domestic work.</p></li>
+    <li><p><b>Work Environment:</b> Customers must ensure a conducive and safe working environment for nurses, free from alcohol intake, smoking, indecent behaviour, or discrimination. Any such occurrence may lead to immediate service withdrawal.</p></li>
+    </ol>
+    <p class="section-title"><strong>Safety, Security, and Valuables</strong></p>
+    <p>The customer/patient is solely responsible for the safety, security, and well-being of the nurses while they are on your premises.</p>
+    <ol>
+    <li><p><b>Valuables:</b> It is imperative that no valuables (money, jewellery, etc.) are left unattended in the vicinity of the nurses. All belongings shoold be kept under safety lock at all times. Book My Nurse, its nurses, or executives shall not be held responsible for any losses resolting from the customer's/patient's or their relatives' negligence.</p></li>
+    <li><p><b>CCTV Cameras:</b> For the safety of the caregiver, it is the customer's duty to install CCTV cameras in all accessible areas of the house, with the exception of bathrooms and restrooms.</p></li>
+    </ol>
+    <p class="section-title"><strong>Nurse Welfare and Logistics</strong></p>
+    <ol>
+    <li><p><b>Mobile Phone Usage:</b> Nurses will use their mobile phones for official reporting (e.g., to our office, attendance marking, receiving instructions via mobile app) and for personal use. Customers must allow nurses to charge their mobile phones on the premises.</p></li>
+    <li><p><b>Breaks & Leave:</b> Nurses are entitled to breaks for refreshments, food, personal hygiene, grooming, rest, and sleep as per labour regolations. They are also entitled to weekly leave, sick leave, and other public holidays as per the "Festivals and Holidays Act." Book My Nurse will arrange alternative staff in case of such absences.</p></li>
+    <li><p><b>Restroom Facilities:</b> A proper, safe, and easily accessible restroom must be provided for both the patient and the nurses.</p></li>
+    <li><p><b>Attendance:</b> Customers/patients must sign the attendance sheet of the nurses daily.</p></li>
+    <li><p><b>Accommodation:</b> For residential nurses (24x7 duty), meals must be provided, and accommodation shoold be provided in the patient's room itself to facilitate effective patient management. Day and night duty nurses are not to be provided with meals.</p></li>
+    </ol>
+    
+    <p class="section-title"><strong>Service Engagement and Termination</strong></p>
+    <ol> 
+    <li><p><b>No Trial Period:</b> Services are chargeable from Day 1 of engagement. There is no "trial period."</p></li>
+    <li><p><b>Notice Period:</b> A minimum of 10 days' written notice must be given by the customer/patient to Book My Nurse for cancellation or termination of nursing services.</p></li>
+    <li><p><b>Payment upon Termination:</b> All outstanding dues must be cleared immediately upon cancellation or termination of service.</p></li>
+    <li><p><b>Changes to Service Period:</b> Any changes to the service requirement period must be communicated in writing/mail with one month's notice.</p></li>
+    </ol>
+    
+    <p class="section-title"><strong>Financial Terms</strong></p>
+    <ol> 
+    <li><p><b>Monthly Charges:</b> The mutually agreed monthly service charge is ₹[Amount] per month.</p></li>
+    <li><p><b>Invoicing & Payment:</b> Invoices will be sent monthly, and payments are due on or before the 3rd of every month.</p></li>
+    <li><p><b>Late Payment Penalty:</b> A penal charge of ₹500/- per day will be levied for late payments.</p></li>
+    <li><p><b>No Direct Payments to Nurses:</b> Customers must not make payments directly to nursing staff. All payments must be made to Book My Nurse.</p></li>
+    <li><p><b>Annual Fee Increase:</b> There will be an annual increase of 10% in monthly charges upon completion of the first year (12 months) and annually thereafter.</p></li>
+    <li><p><b>No Refunds:</b> Payments once made to Book My Nurse are non-refundable under any circumstances.</p></li>
+    </ol>
+    <p class="section-title"><strong>Nurse Allocation and Changes</strong></p>
+    <p>Book My Nurse strives to allocate suitable resources for every customer. However, there is no assurance that the same nurse will be deployed at all times due to operational requirements, leave, or other unforeseen circumstances. Nursing staff may be changed rotationally based on patient conditions.</p>
+
+    <p class="section-title"><strong>Medical Administration & Records</strong></p>
+    <ol>
+    <li><p><b>Medicine Administration:</b> The administration of medicine, injections, or physiotherapy will be done strictly based on a doctor's medical advice, report, or prescription. A copy of the prescription must be shared with our nurses and appended to this Agreement.</p></li>
+    <li><p><b>Patient Photographs:</b> Nurses are authorized and permitted to take photographs of the ailing person or their wounds to monitor medical condition improvement. These photographs are for internal use and record-keeping.</p></li>
+    <li><p><b>Patient Records:</b> Book My Nurse will maintain administrative files/records of the ailing person. These files will not be provided to customers/patients. Xerox copies may be provided only with management permission and at the customer's expense, maintaining confidentiality.</p></li>
+    </ol>
+    <p class="section-title"><strong>Liability and Indemnification</strong></p>
+    <ol>
+    <li><p><b>Force Majeure:</b> Neither Book My Nurse nor its directors, employees, or management are responsible for the failure to provide or continue services due to unforeseen circumstances, climate issues, or any force majeure events.</p></li>
+    <li><p><b>Patient Demise:</b> If a patient receiving nursing care dies due to sickness or related ailments, neither Book My Nurse, its nurses, directors, proprietors, partners, nor employees can be held liable or guilty for any reason whatsoever.</p></li>
+    <li><p><b>Customer Misconduct:</b> If any employee of Book My Nurse is appointed privately without informing the management, or if direct communication/engagement with nurses occurs post-service, strict legal action will be taken against the customer/patient under the Tamil Nadu Private Nursing Home Act 48/2008 and The Indian Contract Act – 1872, (Amendment) Bill 2024, Proposal (Offer) (2(a)): A Promise Conditional on Acceptance. Penalties range from 3 to 10 years imprisonment and fines from ₹10,000 to ₹10 lakhs.</p></li>
+    <li><p><b>Theft/Misconduct by Nurse:</b> While we verify staff backgrounds, Book My Nurse is not responsible for incidents of individual misconduct, theft, indecent behaviour, or inappropriate approaches by any person. If a nurse is found to be involved in theft, the customer must take legal action, including filing a police complaint, directly against the nurse involved. Book My Nurse will not oppose such legal action if the nurse is found guilty through due process and will not be responsible for resolting mental stress or losses to the customer.</p></li>
+    </ol>
+    <p class="section-title"><strong>Communication and Feedback</strong></p>
+    <ol>
+    <li><p><b>Official Communication:</b> All official communications from Book My Nurse will be sent via mail and WhatsApp.</p>
+    <li><p><b>Communication Channel:</b> All communications regarding services must be routed exclusively through the Book My Nurse administrative team.</p></li>
+    <li><p><b>Feedback:</b> We welcome immediate feedback on staff performance, especially after a nurse joins your premises, to facilitate timely corrections or replacements. It is not advisable to provide feedback during payment discussions.</p></li>
+    <li><p><b>No Tips:</b> Book My Nurse discourages customers from paying tips to nurses. Any tips paid cannot be adjusted against monthly service payments.</p></li>
+    <li><p><b>Personal Information of Nurses:</b> Customers are strictly prohibited from inquiring about nurses' caste, religion, or any other personal details. Nurses' relatives are not permitted inside your premises.</p></li>
+    </ol>
+    <p class="section-title"><strong>Post-Service Engagement</strong></p>
+    <ol>
+    <li><p><b>Prohibition on Direct Engagement:</b> After the completion of service from Book My Nurse, the customer/patient is strictly prohibited from engaging the service of the nurse directly or indirectly, on a bilateral basis.</p></li>
+    <li><p><b>Breach of Prohibition:</b> If such bilateral engagement is discovered by Book My Nurse, the customer/patient will be liable to pay losses and damages to Book My Nurse, and legal action will be initiated as per Clause 9.</p></li>
+    </ol>
+    <p class="section-title"><strong>Governing Law & Jurisdiction</strong></p>
+    <p>All disputes arising out of or in connection with this Agreement will be subject to the exclusive jurisdiction of the courts in Madurai, India.</p>
+
+    <p class="section-title"><strong>Modifications</strong></p>
+    <p>We reserve the right to update or modify this Agreement periodically. Continued use of our services after such modifications implies your acceptance of the updated terms.</p>
+  </div>
+
+  <div style="margin-top: 20px;">
+    <p>✅ Thank you for choosing <strong>Book My Nurse</strong>.</p>
+  </div>
+</div>
+
+
+  <!-- Tamil Content -->
+  <div *ngIf="isTamil" class="user-agreement">
+  <h1 class="text-4xl font-bold mb-8 text-center text-orange-500">
+    <b style="text-decoration: underline;">புக் மை நர்ஸ் - பயனர் ஒப்பந்தம் மற்றும் <br> சேவை விதிமுறைகள்</b>
+  </h1>
+
+  <div style="margin-bottom: 15px;">
+    <p><strong>செயல்படும் தேதி:</strong> ஜூலை 23, 2025</p>
+  </div>
+
+  <div style="margin-bottom: 15px;">
+    <p>வணக்கம் <strong>Book My Nurse</strong>. இந்த விரிவான பயனர் ஒப்பந்தம் மற்றும் சேவை விதிமுறைகள் ("ஒப்பந்தம்") புக் மை நர்ஸ் வழங்கும் சேவைகளைப் பயன்படுத்தும் உங்கள் அனுமதி மற்றும் நிபந்தனைகளை வழிநடத்துகிறது. எங்கள் சேவையைப் பயன்படுத்துவதன் மூலம், இந்த நிபந்தனைகளை முழுமையாக ஏற்கின்றீர்கள் என்பதை உறுதிப்படுத்துகிறீர்கள்.</p>
+  </div>
+
+  <div style="margin-bottom: 15px;">
+    <p><strong>தொடர்புக்கு:</strong>
+      (<a href="mailto:support&#64;bookmynurse.com">support&#64;bookmynurse.com</a> |
+      <a href="tel:9943234569" onclick="gtag_report_conversion(); return true;">99432 34569</a>)
+    </p>
+  </div>
+
+  <div style="white-space: pre-line;">
+    <p class="section-title"><strong>நிபந்தனைகளை ஏற்கும் உறுதி</strong></p>
+    <p>நீங்கள் எங்கள் சேவைகளை பயன்படுத்துவதன் மூலம், இந்த ஒப்பந்தம் மற்றும் எங்கள் தனியுரிமைக் கொள்கை மற்றும் தள்ளுபடி விவரங்களை ஏற்கின்றீர்கள். ஏற்க விரும்பவில்லை என்றால், சேவையைப் பயன்படுத்த வேண்டாம்.</p>
+
+    <p class="section-title"><strong>சேவை வழங்கல்</strong></p>
+    <ol>
+      <li><p><b>சேவையின் வரம்பு:</b> நர்ஸ்கள் மருத்துவ ஆலோசனைக்கு உட்பட்ட சேவைகளை வழங்குவார்கள். அவர்கள் மருத்துவர்கள் அல்ல; உங்கள் மருத்துவரை தொடர்ந்து பார்க்க வேண்டும்.</p></li>
+      <li><p><b>நபர் கண்காணிப்பு:</b> ஒரு உறவினர் இடத்தில் இருப்பது கட்டாயம். அவ்வுறவினரின் கைபேசி எண்கள் அவசியம் வழங்கப்பட வேண்டும்.</p></li>
+      <li><p><b>நர்ஸ் நடத்தையும் மரியாதையும்:</b> நர்ஸ்களை மரியாதையுடன் நடத்த வேண்டும். அவர்களை வீட்டு வேலைக்காக பயன்படுத்தக்கூடாது.</p></li>
+      <li><p><b>பணிப்பெயரிடம் சூழல்:</b> அல்கஹால், புகைபிடித்தல், தவறான நடத்தை போன்றவற்றின்றி பாதுகாப்பான சூழல் வழங்கப்பட வேண்டும். இல்லையெனில் சேவை உடனே நிறுத்தப்படும்.</p></li>
+    </ol>
+
+    <p class="section-title"><strong>பாதுகாப்பு மற்றும் விலைமதிப்பான பொருட்கள்</strong></p>
+    <ol>
+      <li><p><b>விலைமதிப்புடையவை:</b> நர்ஸ்கள் அருகில் பணம், நகை போன்றவை வைக்க வேண்டாம். இழப்புகளுக்கு Book My Nurse பொறுப்பேற்காது.</p></li>
+      <li><p><b>CCTV கேமராக்கள்:</b> பாதுகாப்பிற்காக வீட்டின் எல்லா பகுதிகளிலும் (கழிப்பறைகள் தவிர) கேமரா இருக்க வேண்டும்.</p></li>
+    </ol>
+
+    <p class="section-title"><strong>நர்ஸ் நலன் மற்றும் வசதிகள்</strong></p>
+    <ol>
+      <li><p><b>மொபைல் பயணம்:</b> நர்ஸ்கள் செயல்பாட்டு தொடர்புக்காக மொபைல் பயன்படுத்துவர். சார்ஜ் செய்ய அனுமதி தர வேண்டும்.</p></li>
+      <li><p><b>இடைவேளைகள் & விடுமுறைகள்:</b> நர்ஸ்களுக்கு உணவு, ஓய்வு மற்றும் வார விடுமுறை கிடைக்கும். இல்லாதபட்சத்தில் மாற்று நர்ஸ்கள் ஏற்பாடு செய்யப்படும்.</p></li>
+      <li><p><b>கழிப்பறை வசதிகள்:</b> நர்ஸ்களுக்கும் பாதுகாப்பான கழிப்பறை இருக்க வேண்டும்.</p></li>
+      <li><p><b>வருகை பதிவு:</b> தினமும் நர்ஸ்களின் வருகையை கையெழுத்திட்டு உறுதிப்படுத்த வேண்டும்.</p></li>
+      <li><p><b>தங்கும் இடம்:</b> 24x7 நர்ஸ்களுக்கு உணவு மற்றும் உறங்கும் இடம் நோயாளி அறையிலேயே தர வேண்டும்.</p></li>
+    </ol>
+
+    <p class="section-title"><strong>சேவை ஒப்பந்தம் மற்றும் நிறைவு</strong></p>
+    <ol>
+      <li><p><b>சோதனை காலம் இல்லை:</b> சேவை முதுநாளே கட்டணமானது.</p></li>
+      <li><p><b>நிறைவு அறிவிப்பு:</b> குறைந்தது 10 நாட்கள் எழுத்துப்பூர்வமாக அறிவிக்க வேண்டும்.</p></li>
+      <li><p><b>பாக்கி தொகை:</b> சேவை நிறைவு செய்தவுடன் அனைத்து தொகைகளும் செலுத்த வேண்டும்.</p></li>
+      <li><p><b>கால மாற்றம்:</b> சேவை காலத்தை மாற்ற ஒரு மாதம் முன்பே எழுத்தில் அறிவிக்க வேண்டும்.</p></li>
+    </ol>
+
+    <p class="section-title"><strong>நிதி விதிமுறைகள்</strong></p>
+    <ol>
+      <li><p><b>மாத சந்தா:</b> மாதசம்பளம் ₹[தொகை] ஆகும்.</p></li>
+      <li><p><b>பில்லிங் மற்றும் கட்டணம்:</b> ஒவ்வொரு மாதமும் 3ம் தேதிக்கு முன் கட்டண செலுத்த வேண்டும்.</p></li>
+      <li><p><b>தாமத அபராதம்:</b> ₹500/- நாள் வழியாக அபராதம் விதிக்கப்படும்.</p></li>
+      <li><p><b>நர்ஸ்களுக்கு நேரடி பணம் தரக் கூடாது:</b> அனைத்து தொகைகளும் Book My Nurse-க்கு நேரடியாக செலுத்த வேண்டும்.</p></li>
+      <li><p><b>ஆண்டு கட்டண உயர்வு:</b> ஆண்டுக்கு ஒரு முறை 10% உயர்வு அமலுக்கு வரும்.</p></li>
+      <li><p><b>பணத்தீட்டுச் செலுத்தல்:</b> ஒருமுறை செலுத்திய தொகை திருப்பி வழங்க முடியாது.</p></li>
+    </ol>
+
+    <p class="section-title"><strong>நர்ஸ் ஒதுக்கீடு</strong></p>
+    <p>நாங்கள் நர்ஸ்களை திட்டமிட்டு ஒதுக்க முயற்சிக்கிறோம். ஆனால், ஒரே நர்ஸை தொடர்ந்து வழங்குவோம் என்ற உறுதி இல்லை.</p>
+
+    <p class="section-title"><strong>மருந்து நிர்வாகம் மற்றும் பதிவுகள்</strong></p>
+    <ol>
+      <li><p><b>மருந்தளிப்பு:</b> மருத்துவரின் ஆலோசனை மற்றும் எழுத்துப்பூர்வ பரிந்துரை அடிப்படையில் மட்டுமே மருந்து, ஊசி, அல்லது பிசியோதெரபி அளிக்கப்படும்.</p></li>
+      <li><p><b>படங்கள்:</b> நோயாளியின் நிலையை கண்காணிக்க நர்ஸ்கள் புகைப்படம் எடுப்பதற்கு அனுமதிக்கப்படுவர்.</p></li>
+      <li><p><b>பதிவுகள்:</b> நோயாளியின் தகவல்கள் எங்கள் பதிவுகளில் காப்பாற்றப்படும். அவை வழங்கப்படமாட்டாது. நகல்களுக்கு மேலாளரின் அனுமதி தேவைப்படும்.</p></li>
+    </ol>
+
+    <p class="section-title"><strong>பொறுப்பு மற்றும் சட்ட நடவடிக்கை</strong></p>
+    <ol>
+      <li><p><b>ஊர்அமைச்சு காரணிகள்:</b> இயற்கை பேரழிவுகள் காரணமாக சேவை வழங்க முடியாமை என நாங்கள் பொறுப்பாக இருக்க முடியாது.</p></li>
+      <li><p><b>நோயாளி மரணம்:</b> நோயாளி மரணத்திற்கு எங்கள் நிறுவனம் பொறுப்பாகாது.</p></li>
+      <li><p><b>தவறான நபர் தொடர்பு:</b> நர்ஸ்களை நேரடியாகப் பணிக்கு அழைத்தால், சட்ட நடவடிக்கை எடுக்கப்படும்.</p></li>
+      <li><p><b>திருட்டு அல்லது தவறான நடத்தை:</b> நர்ஸின் தவறான செயல் குறித்து தாங்கள் காவல் நிலையத்தில் புகார் செய்ய வேண்டும்.</p></li>
+    </ol>
+
+    <p class="section-title"><strong>தொடர்பு மற்றும் பின்னூட்டம்</strong></p>
+    <ol>
+      <li><p><b>அதிகாரப்பூர்வ தகவல்:</b> Book My Nurse மூலம் மின்னஞ்சல் மற்றும் வாட்ஸ்அப் வழியாக தகவல் வழங்கப்படும்.</p></li>
+      <li><p><b>பணிச்சேவை தொடர்பு:</b> அனைத்து தொடர்பும் நிர்வாகக் குழு வாயிலாக மட்டுமே இருக்க வேண்டும்.</p></li>
+      <li><p><b>பின்னூட்டம்:</b> நர்ஸ் நியமனம் பிறகு உடனடியாக உங்கள் கருத்தை வழங்கலாம்.</p></li>
+      <li><p><b>உதவித்தொகை இல்லாது:</b> நர்ஸ்களுக்கு சிறுத்தொகை வழங்க வேண்டாம். அதை கட்டணத்திலிருந்து கழிக்க முடியாது.</p></li>
+      <li><p><b>தனிப்பட்ட விவரங்கள் கேட்கக் கூடாது:</b> நர்ஸ்களின் மதம், சாதி போன்ற விஷயங்களை கேட்க அனுமதி இல்லை.</p></li>
+    </ol>
+
+    <p class="section-title"><strong>சேவை பிறகு நிபந்தனைகள்</strong></p>
+    <ol>
+      <li><p><b>நேரடி நியமனம் தடை:</b> சேவை முடிந்த பின் நர்ஸ்களை நேரடியாகப் பணிக்கு எடுக்கக் கூடாது.</p></li>
+      <li><p><b>உறுதிமுறைகளை மீறினால்:</b> நிறுவனத்திற்கு இழப்பீடு மற்றும் சட்ட நடவடிக்கை ஏற்படும்.</p></li>
+    </ol>
+
+    <p class="section-title"><strong>சட்ட நிபந்தனைகள்</strong></p>
+    <p>இந்த ஒப்பந்தம் தொடர்பான அனைத்து வழக்குகளும் மதுரை நீதிமன்ற அதிகாரப்பூர்வமானவை ஆகும்.</p>
+
+    <p class="section-title"><strong>மாற்றங்கள்</strong></p>
+    <p>இந்த நிபந்தனைகள் தவணை தவணையாக மாற்றப்படலாம். மாற்றத்துக்குப் பின் சேவையை தொடர்வது, புதிய நிபந்தனைகளை ஏற்கின்றீர்கள் என்பதை குறிக்கிறது.</p>
+  </div>
+
+  <div style="margin-top: 20px;">
+    <p>✅ எங்களைத் தேர்ந்தெடுத்ததற்கு நன்றி, <strong>Book My Nurse</strong>.</p>
+  </div>
+</div>
+
+
+
+
+</div>
+<app-footer></app-footer>

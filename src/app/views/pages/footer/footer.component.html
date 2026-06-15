@@ -1,0 +1,282 @@
+<footer class="footers">
+    <div class="footer-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-5 col-md-4">
+                    <div class="footer-widget footer-about">
+                        <div class="footer-logo mb-1">
+                            <img src="assets/img/bookmynurse-logo-2.png" alt="Book My Nurse, Logo, Home Nursing"
+                                class="img-fluid rounded text-center">
+                        </div>
+                        <div class="footer-about-content">
+                            <h4 class="text-prime"><b>Exceptional Care for Your Loved Ones</b></h4>
+                            <p>At <b>BookMyNurse</b>, we ensure only the most qualified, compassionate, and experienced
+                                healthcare professionals care for your family.
+                                Backed by <b>Nursing Station Health Care Pvt Ltd.</b>, bringing you
+                            </p>
+                            <div class="footer-about-content-point">
+                                <div class="d-flex">
+                                    <i class="fa-solid fa-shield-halved me-2 text-prime"></i>
+                                    <h6> <b class="text-black">Verified credentials</b> and background checks for all
+                                        nursing staff</h6>
+                                </div>
+                                <div class="d-flex">
+                                    <i class="fa-solid fa-shield-halved me-2 text-prime"></i>
+                                    <h6><b class="text-black">Specialized expertise</b> tailored to individual care
+                                        needs</h6>
+                                </div>
+                                <div class="d-flex">
+                                    <i class="fa-solid fa-shield-halved me-2 text-prime"></i>
+                                   <h6><b class="text-black">Trusted healthcare solutions</b> backed by years of industry
+                                    experience</h6> 
+                                </div>
+
+                            </div>
+
+                            <!-- <ul style="font-size: 16px; padding-left: 0; list-style: none; margin-bottom: 5px;">
+                    <li style="margin-bottom: 6px; white-space: nowrap;">
+                    <i class="fas fa-check-circle" style="color: #13A7F1; margin-right: 8px;"></i>
+                    <b>Verified credentials</b> and background checks for all nursing staff
+                    </li>
+                    <li style="margin-bottom: 6px; white-space: nowrap;">
+                    <i class="fas fa-check-circle" style="color: #13A7F1; margin-right: 8px;"></i>
+                    <b>Specialized expertise</b> tailored to individual care needs
+                    </li>
+                    <li style="margin-bottom: 6px; white-space: nowrap;">
+                    <i class="fas fa-check-circle" style="color: #13A7F1; margin-right: 8px;"></i>
+                    <b>Trusted healthcare solutions</b> backed by years of industry experience
+                    </li>
+                </ul> -->
+
+                            <p style="color: #f36302 !important;">
+                                <b>Choose excellence for your loved ones, <span class="highlight-priority">Your Health, Our Priority.</span></b>
+                                </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4 d-flex justify-content-end footer-contact-wrapper">
+                    <div class="footer-widget footer-contact">
+                        <div class="legal-information">
+                            <h5 class="foot-mail mb-0">
+                                
+                                
+                                <p class="legal-btn" (click)="showLegal = true">
+                                    <i class="fas fa-file-contract   me-2"></i>Legal Information
+                                </p>
+                            </h5>
+                            </div>
+                        <h2 class="footer-title mb-3">Contact Us</h2>
+                        <div class="footer-contact-info">
+                            <h5 class="geetha text-prime mb-2">
+                                <i class="fa-solid fa-phone text-prime me-2"></i>
+                                <a href="tel:9943234569" onclick="gtag_report_conversion(); return true;" class="foot-number text-axess">+91 99432 34569</a>
+                            </h5>
+                            <h5 class="foot-mail mb-0 d-flex align-items-center">
+                                <i class="fa-solid fa-envelope text-prime me-2"></i>
+                                <a href="mailto:support@bookmynurse.com" class="foot-number text-axess">
+                                    support&#64;bookmynurse.com
+                                </a>
+                            </h5>
+
+
+                            <div class="video-wrapper">
+                                <button class="app-btn-2" (click)="showVideo = true">
+                                    <i class="fas fa-play-circle  me-2"></i>
+                                    <span>Video Introduction</span>
+                                </button>
+                            </div>
+
+                            <!-- Clickable Legal Info Text
+ <i class=" me-1"></i> <p class="legal-link" (click)="showLegal = true">
+ Legal Information
+</p> -->
+                            <!-- <div class="legal-information">
+                            <h5 class="foot-mail mb-0">
+                                <i class="fas fa-file-contract text-prime me-2"></i>
+                                
+                                <p class="legal-link" (click)="showLegal = true">
+                                    <b>Legal Information</b>
+                                </p>
+                            </h5>
+                            </div> -->
+
+
+                        <!-- Legal Info Modal -->
+                        <div class="video-overlay-1" *ngIf="showLegal">
+                        <div class="video-modal-1">
+                            <button class="close-btn" (click)="showLegal = false">&times;</button>
+                            <div class="legal-content">
+                            <h2>Legal Information</h2>
+
+                            <div class="legal-section">
+                                <h4><b>Privacy Policy</b></h4>
+                                <p><strong>Last Updated:</strong>July 23, 2025</p>
+                                <p>Your privacy is important to us. This policy explains how we collect, use, and protect your data.</p>
+                                <a href="/privacy-policy" target="_blank" class="read-more-btn">Read Full Privacy Policy</a>
+                            </div>
+
+                            <div class="legal-section mt-3">
+                                <h4><b>Terms of Service (User Agreement)</b></h4>
+                                <p><strong>Last Updated:</strong>July 23, 2025</p>
+                                <p>By using our services and website, you agree to these terms and conditions.</p>
+                                <a href="/user-agreement" target="_blank" class="read-more-btn">Read Full Terms of Service</a>
+                            </div>
+
+                            <div class="legal-section mt-3">
+                                <h4><b>Disclaimer</b></h4>
+                                <p><strong>Last Updated:</strong>July 23, 2025</p>
+                                <p>This website provides information for general purposes only. We are not liable for any errors or omissions.</p>
+                                <a href="/disclaimer" target="_blank" class="read-more-btn">Read Full Disclaimer</a>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+
+                            <!-- Video Modal -->
+                            <div class="video-overlay" *ngIf="showVideo">
+                                <div class="video-modal">
+                                    <button class="close-btn" (click)="showVideo = false">&times;</button>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/RdrtOw1Vpn8"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </div>
+                            </div>
+                            <!--  -->
+                                <div>
+                                <h3 class="footer-title mt-2">Follow Us</h3>
+                                    <div class="d-flex mt-2">
+        
+                                    <a class="btn social-media btn-square me-2"
+                                        href="https://www.facebook.com/bookmynurse" target="_blank"><i
+                                            class="fab fa-facebook-f fw-normal"></i></a>
+                                    <a class="btn social-media btn-square me-2"
+                                        href="https://www.instagram.com/bookmynurseindia/" target="_blank"><i
+                                            class="fab fa-instagram fw-normal"></i></a>
+                                    <a class="btn social-media btn-square me-2" href="https://x.com/BookMyNurse"
+                                        target="_blank"><i class="fab fa-twitter fw-normal"></i></a>
+
+                                    <a class="btn social-media btn-square me-2"
+                                        href="https://www.linkedin.com/company/book-my-nurse" target="_blank"><i
+                                            class="fab fa-linkedin-in fw-normal"></i></a>
+                                    <a class="btn social-media btn-square me-2" target="_blank"
+                                        href="https://www.youtube.com/@BookMyNurse"><i
+                                            class="fab fa-youtube fw-normal"></i></a>
+
+                                </div>
+                                </div>
+
+
+<!--  -->
+                            <!-- <div class="social-icon follow">
+                                <h2 class="footer-title">Follow Us</h2>
+                                <div class="list-inline">
+                                <ul class="mb-0">
+                                    <li class="list-inline-item" style="margin-right: 30px;">
+                                        <a href="https://www.facebook.com/bookmynurse" target="_blank"
+                                            class="text-decoration-none">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item" style="margin-right: 30px;">
+                                        <a href="https://www.instagram.com/bookmynurseindia/" target="_blank"
+                                            class="text-decoration-none">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item" style="margin-right: 30px;">
+                                        <a href="https://x.com/BookMyNurse" target="_blank"
+                                            class="text-decoration-none">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item" style="margin-right: 30px;">
+                                        <a href="https://www.linkedin.com/company/book-my-nurse" target="_blank"
+                                            class="text-decoration-none">
+                                            <i class="fab fa-linkedin-in"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="https://www.youtube.com/@BookMyNurse" target="_blank"
+                                            class="text-decoration-none">
+                                            <i class="fab fa-youtube"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                </div>
+                           
+                            </div> -->
+                    
+
+
+
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="footer-widget footer-contact">
+                        <h2 class="footer-title mb-3">Address</h2>
+                        <div class="footer-contact-info">
+                            <div class="footer-address mb-3">
+                                
+                                <span><i class="fas fa-map-marker-alt text-prime me-2"></i></span>
+                               
+                               <div>
+                               <h4 class="text-black"><b>Book My Nurse</b></h4>
+                                <p> Geethalaya Apartments,<br>
+                                    77, G-Block, 12th Street,<br>
+                                    2nd Floor, Anna Nagar East,<br>
+                                    Chennai, Tamil Nadu, <br>
+                                    India-600102</p>
+
+                                    <a href="https://maps.app.goo.gl/Z4JVnzebAX83kuPP7" target="_blank" class="location-btn">📍 View Location</a>
+                               </div> 
+
+                               
+                                <!-- <p class="geetha mb-0">
+                                    <b>Book My Nurse</b><br>
+                                    Geethalaya Apartments,<br>
+                                    <span>77, G-Block, 12th Street,</span><br>
+                                    <span>2nd Floor, Anna Nagar East,</span><br>
+                                    <span>Chennai, Tamil Nadu, India-600102</span>
+                                </p> -->
+                            </div>
+
+                            <!-- <div class="footer-widget footer-app mb-2">
+                                <a href="assets/bookmynurse.apk" class="app-btn" target="_blank">
+                                    <i class="fab fa-android"></i> <span>Download our Mobile App</span>
+                                </a>
+                            </div> -->
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <hr style="width: 100%; border: 1px solid #000; margin: 5px;">
+        <div class="copyright-area d-flex justify-between">
+            <p class="copyright-text">
+                © 2026<a class="geetha" href="https://bookmynurse.com"> BookMyNurse.</a> All rights reserved.
+            </p>
+            <p class="geetha-1 text-center">
+                Powered by the innovation of
+                <a href="https://www.resq.sg/" class="resq-link" rel="nofollow">
+                    <span class="text"><b>ResQ</b></span>
+                    <img src="assets/img/resq-merlion-red.png" class="lion-icon" alt="Lion" />
+                </a>
+            </p>
+        </div>
+    </div>
+
+
+</footer>

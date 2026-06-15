@@ -1,0 +1,300 @@
+<app-header></app-header>
+ 
+<div class="container mx-auto p-8 max-w-5xl bg-white shadow-lg rounded-lg">
+
+    <div style="text-align: right; margin-bottom: 15px; display: flex; justify-content: flex-end; align-items: center; gap: 8px;">
+  <span style="font-size: 20px; color: orange;">🌐</span>
+  
+  <select (change)="toggleLanguage($event)" 
+          style="background-color: white; color: orange; border: 2px solid orange; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+    <option [selected]="!isTamil" value="en">English</option>
+    <option [selected]="isTamil" value="ta">தமிழ்</option>
+  </select>
+</div>
+
+
+
+
+
+  <!-- English Content -->
+  <div *ngIf="!isTamil" class="terms-condition">
+  <h1 class="text-4xl font-bold mb-8 text-center text-orange-500">
+    <b style="text-decoration: underline;">Terms and Conditions</b>
+  </h1>
+
+  <div class="text-left mb-4">
+    <p class="text-gray-700"><strong>Effective Date:</strong> July 23, 2025</p>
+  </div>
+
+  <div style="margin-bottom: 15px;">
+    <p><strong>Contact Us:</strong>
+      (<a href="mailto:support&#64;bookmynurse.com">support&#64;bookmynurse.com</a> |
+      <a href="tel:9943234569" onclick="gtag_report_conversion(); return true;">99432 34569</a>)
+    </p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title"><b>Introduction</b></h2>
+    <p>Welcome to Book My Nurse. These Terms and Conditions, including the Code of Conduct, outline the responsibilities, expectations, and operational guidelines for all registered nurses ("Nurses" or "you") utilizing the Book My Nurse platform and engaging with our services. By accessing, registering with, or engaging in any assignment through Book My Nurse, you acknowledge that you have read, understood, and agree to abide by these terms, as well as our comprehensive <strong>Agreement, Privacy Policy, and Disclaimers.</strong> Your adherence to these policies is fundamental to maintaining the integrity and quality of care provided by Book My Nurse.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Organizational Integrity & Compliance</h2>
+    <p>All decisions, actions, and conduct by Nurses must align with the vision, mission, and strategic goals of Book My Nurse. As a Nurse associated with Book My Nurse, you are expected to operate with the utmost discipline, professionalism, and adherence to all company policies, procedures, and relevant legal and regolatory frameworks governing healthcare services in India.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Document Verification & Registration</h2>
+    <p>Upon joining Book My Nurse, you are required to present all original nursing education certificates, professional licenses, experience certificates, government identification documents (e.g., Aadhaar, PAN), and any other relevant credentials for thorough verification. Failure to provide authentic documents or any misrepresentation will resolt in immediate termination of your association with Book My Nurse. Nurses will be enrolled in ESI and EPF schemes upon joining, and all required documents for these statutory benefits must be submitted accurately and on time.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Professional Conduct & Ethical Standards</h2>
+    <p>Nurses are expected to maintain the highest standards of professional conduct at all times while on duty, both at client premises and in interactions with Book My Nurse staff. Violation of these standards will lead to strict disciplinary action, including but not limited to immediate suspension or permanent dismissal.</p>
+
+    <ol>
+      <li><strong>Duty Discipline:</strong> No sleeping during duty hours; no unauthorized watching of movies, excessive personal phone use, or unnecessary chatting while on duty.</li>
+      <li><strong>Punctuality & Attendance:</strong> No unauthorized absenteeism or taking leave for non-medical reasons without prior approval from Book My Nurse management.</li>
+      <li><strong>Integrity:</strong> No theft, fraud, unethical behavior, or involvement in any criminal activities.</li>
+      <li><strong>Respect & Decorum:</strong> Treat clients, patients, their families, and all Book My Nurse staff with respect and dignity. Do not engage in any form of discrimination.</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Confidentiality & Healthcare Data Handling by Nurses</h2>
+    <p>Nurses have a critical role in upholding the confidentiality and security of sensitive information, particolarly healthcare data, as outlined in Book My Nurse's <strong>Privacy Policy.</strong></p>
+
+    <ol>
+      <li><strong>Patient & Client Confidentiality:</strong> You must not share any personal, medical, financial, or sensitive information pertaining to clients, patients, or their families with anyone outside the Book My Nurse organization, except as required for the patient's direct care or as explicitly authorized by Book My Nurse or legal mandate.</li>
+      <li><strong>Company Information:</strong> You must not disclose internal company details, operational procedures, or proprietary information to external parties.</li>
+      <li><strong>Data Handling:</strong>
+        <ol>
+          <li><strong>Medical Records:</strong> While on duty, you may access patient information strictly on a need-to-know basis for the purpose of providing care. You must maintain the confidentiality of patient files and records.</li>
+          <li><strong>Photographs:</strong> If authorized to take photographs of ailing persons or wounds for monitoring medical conditions, these images are for internal administrative and medical assessment purposes only. They must be handled with utmost confidentiality and transmitted securely to Book My Nurse as per internal protocols. You must not store such images on personal devices or share them with unauthorized individuals.</li>
+          <li><strong>Reporting:</strong> All daily duty reports and observations (e.g., bedsores) must be accurately documented and reported to the Book My Nurse office immediately as per prescribed procedures.</li>
+          <li><strong>Post-Service Contact:</strong> After the completion of service, you are strictly prohibited from maintaining contact with former clients/patients or their families, either directly or indirectly. Any attempt to solicit private engagement with Book My Nurse clients will resolt in severe legal action.</li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Assignment & Location</h2>
+    <p>Nurses are required to work at the assigned client location. Transfers to new locations may occur with prior notice for valid operational reasons. You must not change your assigned location or accept new assignments without explicit written approval from Book My Nurse.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Personal Responsibility & Safety</h2>
+    <ol>
+      <li><strong>Duty Knowledge:</strong> You are responsible for understanding your assigned duties and scope of care. In case of any problems, emergencies, or unsafe situations during an assignment, you must immediately contact the Book My Nurse office.</li>
+      <li><strong>Emergency Protocol:</strong> In an unsafe situation, you are authorized to leave the premises. Immediately call emergency services (e.g., 100 for police) if personal safety is threatened, and simoltaneously inform Book My Nurse management.</li>
+      <li><strong>Visitors:</strong> Bringing family members or friends to the patient’s house while on duty is strictly prohibited without explicit company approval.</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Medication Handling & Medical Procedures</h2>
+    <p>Strict adherence to medical protocols is mandatory. Negligence in this area will be treated as a serious violation.</p>
+
+    <ol>
+      <li><strong>Prescription Adherence:</strong> Do not administer any medicine, including Siddha, Ayurveda, or Unani medicine, without a valid doctor's prescription. A copy of the prescription must be available.</li>
+      <li><strong>Five Rights of Medication:</strong> Always adhere to the "Five Rights of Medication Administration": Right Patient, Right Time, Right Route, Right Dose, Right Medication.</li>
+      <li><strong>Specific Procedures:</strong> Procedures such as Ryle's Tube Insertion, Catheterization, IV Infusion, and Enema require:
+        <ol>
+          <li>A clear doctor’s prescription.</li>
+          <li>Informed consent from the patient's family/guardian.</li>
+          <li>Prior approval from your Book My Nurse supervisor.</li>
+        </ol>
+      </li>
+      <li><strong>Documentation:</strong> Maintain accurate insolin charts and meticolously record in-time and out-time for all medications administered daily.</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Patient Care & Universal Precautions</h2>
+    <ol>
+      <li><strong>Patient Understanding:</strong> You must understand the patient's status (conscious, unconscious, bedridden, etc.) and provide care with empathy, compassion, and professionalism.</li>
+      <li><strong>Hygiene & Safety:</strong>
+        <ol>
+          <li>Always wear gloves and a mask during patient care and medical procedures.</li>
+          <li>Use barrier protection (e.g., aprons, gowns) as necessary.</li>
+          <li>Properly discard all contaminated materials according to biohazard protocols.</li>
+          <li>Thoroughly clean the patient care area after procedures.</li>
+          <li>Wash hands thoroughly before and after every patient interaction and procedure.</li>
+          <li>Ensure your uniform is worn, clean, and well-maintained. Failure to wear a uniform may resolt in being marked absent.</li>
+          <li>You must carry a personal hygiene kit. Lack of personal hygiene is a policy violation.</li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Financial & Professional Ethics</h2>
+    <ol>
+      <li><strong>No Tips or Gifts:</strong> Nurses are strictly prohibited from soliciting or accepting tips, gifts, money, or any other form of personal gratuity from patients or their families. Any such payments will not be adjusted against service charges.</li>
+      <li><strong>Misuse of Information:</strong> Using internal company information, client data, or patient details for personal benefit, fraud, or offering private nursing services outside of Book My Nurse is considered serious misconduct and will lead to immediate dismissal and legal action.</li>
+      <li><strong>Unauthorized Services:</strong> Offering or promoting nursing services using Book My Nurse’s name or reputation without explicit written permission is illegal and punishable.</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Resignation Policy</h2>
+    <p>Nurses are required to provide <strong>three (3) months' written notice</strong> to Book My Nurse prior to resigning from their employment. Failure to comply with this notice period may resolt in the withholding of original certificates and/or initiation of legal action for breach of contract and recovery of damages.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Shift Handover</h2>
+    <p>In situations involving two shifts, the outgoing nurse is responsible for completing all necessary reporting and ensuring a proper handover of responsibilities and patient status to the incoming nurse.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Former Employee Conduct</h2>
+    <p>Upon disassociation from Book My Nurse (e.g., resignation, dismissal), former Nurses are strictly prohibited from maintaining contact with former clients or misusing Book My Nurse’s name, brand, or any confidential information for personal benefit or to solicit private services. Violation of this clause will resolt in legal action as detailed in the <strong>User Agreement.</strong></p>
+  </div>
+
+  <div style="margin-top: 20px;">
+    <p>For assistance, contact:
+      <a href="mailto:support&#64;bookmynurse.com">support&#64;bookmynurse.com</a> |
+      <a href="tel:+919943234569" onclick="gtag_report_conversion(); return true;" style="color: blue;">99432 34569</a>
+    </p>
+  </div>
+
+  <div class="thank-you">
+    <p class="mt-8">✅ Thank you for upholding the values, responsibilities, and professional standards of Book My Nurse.</p>
+  </div>
+</div>
+
+
+
+  <div *ngIf="isTamil" class="terms-condition">
+  <h1 class="text-4xl font-bold mb-8 text-center text-orange-500">
+    <b style="text-decoration: underline;">விதிமுறைகள் மற்றும் நிபந்தனைகள்</b>
+  </h1>
+
+  <div class="text-left mb-4">
+    <p class="text-gray-700"><strong>செயல்படுத்தும் தேதி:</strong> ஜூலை 23, 2025</p>
+  </div>
+
+  <div style="margin-bottom: 15px;">
+    <p><strong>தொடர்புக்கு:</strong>
+      (<a href="mailto:support&#64;bookmynurse.com">support&#64;bookmynurse.com</a> |
+      <a href="tel:9943234569" onclick="gtag_report_conversion(); return true;">99432 34569</a>)
+    </p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title"><b>அறிமுகம்</b></h2>
+    <p>Book My Nurse-ஐ பயன்படுத்தும் செவிலியர்களுக்கான இவ்விதிமுறைகள் மற்றும் நடைமுறைகள், உங்கள் பொறுப்புகள் மற்றும் bookmynurse.com இன் விதிமுறைகளுடன் ஒத்துப் போகும் வகையில் உள்ளன. எங்கள் சேவைகளை பயன்படுத்துவதன் மூலம், நீங்கள் இவைகளை ஏற்கின்றீர்கள் என்று கருதப்படும்.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">நிறுவன ஒழுங்கு மற்றும் இணக்கம்</h2>
+    <p>நிறுவனத்தின் நோக்கு மற்றும் இலக்குகளுடன் ஒத்துப்போகும் வகையில் செவிலியர்களின் நடவடிக்கைகள் இருக்க வேண்டும். ஒழுக்கம், தொழில்முறை மனப்பாங்கு, மற்றும் சட்ட நடவடிக்கைகளை பின்பற்றுதல் அவசியம்.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">ஆவண சரிபார்ப்பு மற்றும் பதிவு</h2>
+    <p>செவிலியர் வேலைக்கு சேர்ந்தவுடன், அசல் கல்வி சான்றிதழ்கள், அனுபவ சான்றுகள், அடையாள ஆவணங்கள் (ஆதார், பான்) உள்ளிட்டவை சரிபார்ப்பு செய்ய சமர்ப்பிக்கப்பட வேண்டும். தவறான ஆவணங்கள் அளிக்கப்படின் உடனடியாக வேலை நீக்கம் செய்யப்படும். ESI மற்றும் EPF கணக்குகள் துவக்கப்படும்.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">தொழில்முறை ஒழுங்குமுறை</h2>
+    <ol>
+      <li>வேலை நேரத்தில் தூங்கக்கூடாது</li>
+      <li>அனுமதியில்லாமல் திரைப்படங்கள் பார்ப்பது தவறு</li>
+      <li>அதிகமாக தொலைபேசி பயன்படுத்தக்கூடாது</li>
+      <li>அனுமதியில்லாமல் விடுப்பு எடுக்கக்கூடாது</li>
+      <li>திருட்டு, மோசடி போன்றவற்றில் ஈடுபடக்கூடாது</li>
+      <li>நல்ல பழக்கவழக்கங்களை கடைபிடிக்க வேண்டும்</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">ரகசியத்தன்மை மற்றும் தரவுகள் கையாளுதல்</h2>
+    <ol>
+      <li>நோயாளி, கிளையண்ட் விவரங்களை வெளியிடக்கூடாது</li>
+      <li>நிறுவனத்தின் உள் விவரங்களை பகிரக்கூடாது</li>
+      <li>படங்களை எடுக்க நிறுவன அனுமதி தேவை</li>
+      <li>தினசரி கடமை அறிக்கைகளை வழங்க வேண்டும்</li>
+      <li>சேவை முடிந்தவுடன் முன்னாள் நோயாளிகளுடன் தொடர்பில் இருக்கக்கூடாது</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">பணியிட ஒதுக்கீடு</h2>
+    <p>Book My Nurse வழங்கும் இடத்தில் மட்டும் பணியாற்ற வேண்டும். இடமாற்றம் நிறுவனம் அறிவிக்கும் போது மட்டுமே செல்லலாம்.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">தனிப்பட்ட பொறுப்பு மற்றும் பாதுகாப்பு</h2>
+    <ol>
+      <li>தனக்குக் கொடுக்கப்பட்ட கடமைகளை தெளிவாக புரிந்து கொள்ள வேண்டும்</li>
+      <li>அபாயகரமான சூழ்நிலைகளில் இருந்து விலகி, 100-ஐ அழைத்து, நிறுவனத்துடன் உடனடியாக தொடர்புகொள்க</li>
+      <li>நண்பர்கள் அல்லது குடும்ப உறுப்பினர்களை நோயாளியின் வீட்டிற்கு அழைத்து வரக்கூடாது</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">மருந்து மற்றும் மருத்துவ நடைமுறைகள்</h2>
+    <ol>
+      <li>மருத்துவ ரிசிபி இல்லாமல் எந்த மருந்தும் அளிக்கக்கூடாது</li>
+      <li>சித்தா, ஆயுர்வேதம் போன்ற மருந்துகள் தவிர்க்கப்பட வேண்டும்</li>
+      <li>5 உரிமைகள்: சரியான நோயாளி, சரியான நேரம், வழி, அளவு, மருந்து</li>
+      <li>மருத்துவ நடைமுறைகள்: டாக்டர் பரிந்துரை, குடும்ப ஒப்புதல், மேற்பார்வையாளர் அனுமதி தேவை</li>
+      <li>மருந்து மற்றும் இன்சுலின் பதிவுகள் பராமரிக்க வேண்டும்</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">நோயாளி பராமரிப்பு மற்றும் பாதுகாப்பு</h2>
+    <ol>
+      <li>நோயாளியின் நிலைமை (உணர்வுள்ள, உணர்வற்ற, படுக்கையிலிருக்கும்) புரிந்து கொள்ள வேண்டும்</li>
+      <li>எப்போதும் கையுறை மற்றும் முகமூடி அணிய வேண்டும்</li>
+      <li>தடுப்பு பாதுகாப்பு பொருட்கள் பயன்படுத்த வேண்டும்</li>
+      <li>பாதிக்கப்பட்ட பொருட்களை முறையாக தொலைக்க வேண்டும்</li>
+      <li>பரிசோதனையின்பிறகு பகுதியை சுத்தம் செய்ய வேண்டும்</li>
+      <li>சேவை நேரத்துக்கு முன் மற்றும் பின் கைகளை கழுவ வேண்டும்</li>
+      <li>தோல்மூடிய அணிவை சுத்தமாக பராமரிக்க வேண்டும்</li>
+      <li>தனிப்பட்ட ஹைஜீன் கிட் வைத்திருக்க வேண்டும்</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">நிதி மற்றும் தொழில்முறை ஒழுக்கம்</h2>
+    <ol>
+      <li>நோயாளிகளிடமிருந்து பரிசுகள், பணம் பெறக்கூடாது</li>
+      <li>நிறுவன தகவல்களை தனிநலனுக்காக பயன்படுத்தக்கூடாது</li>
+      <li>Book My Nurse பெயரில் தனிப்பட்ட சேவைகள் வழங்கக்கூடாது</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">ராஜினாமா கொள்கை</h2>
+    <p>செவிலியர்கள் 3 மாதங்கள் முன் எழுத்து மூலம் ராஜினாமா செய்ய வேண்டும். இல்லையெனில் நிறுவன ஆவணங்கள் பிடிக்கப்படலாம் மற்றும் சட்ட நடவடிக்கைகள் எடுக்கப்படும்.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">ஷிப்ட் மாற்றம்</h2>
+    <p>இரு ஷிப்ட் உள்ள இடங்களில், பணியாற்றிய செவிலியர் ஒப்படைப்பு செய்ய வேண்டியது கட்டாயம்.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">முன்னாள் பணியாளர் நடத்தை</h2>
+    <p>Book My Nurse-இல் இருந்து விலகிய பின்னர், முன்னாள் கிளையண்ட்களுடன் தொடர்பு கொள்ளவும், நிறுவனத்தின் பெயரை தனிநலனுக்காக பயன்படுத்தவும் கூடாது. சட்ட நடவடிக்கைகள் எடுக்கப்படும்.</p>
+  </div>
+
+  <div style="margin-top: 20px;">
+    <p>உதவிக்காக தொடர்பு கொள்ள:
+      <a href="mailto:support&#64;bookmynurse.com">support&#64;bookmynurse.com</a> |
+      <a href="tel:+919943234569" onclick="gtag_report_conversion(); return true;" style="color: blue;">99432 34569</a>
+    </p>
+  </div>
+
+  <div class="thank-you">
+    <p class="mt-8">✅ Book My Nurse நிறுவனத்தின் மதிப்புகளை மற்றும் பொறுப்புகளை மதித்து நீங்கள் ஒத்துழைக்கும் விதத்தில் நன்றி.</p>
+  </div>
+</div>
+
+
+  </div>
+<app-footer></app-footer>

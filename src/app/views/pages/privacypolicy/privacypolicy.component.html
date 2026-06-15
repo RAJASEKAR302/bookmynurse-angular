@@ -1,0 +1,204 @@
+<app-header></app-header>
+
+<div class="container mx-auto p-8 max-w-5xl bg-white shadow-lg rounded-lg">
+
+  <div style="text-align: right; margin-bottom: 15px; display: flex; justify-content: flex-end; align-items: center; gap: 8px;">
+  <span style="font-size: 20px; color: orange;">🌐</span>
+  
+  <select (change)="toggleLanguage($event)" 
+          style="background-color: white; color: orange; border: 2px solid orange; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+    <option [selected]="!isTamil" value="en">English</option>
+    <option [selected]="isTamil" value="ta">தமிழ்</option>
+  </select>
+</div>
+
+  <!-- English Content -->
+  <div *ngIf="!isTamil" class="privacy-policy">
+  <h1 class="text-4xl font-bold mb-8 text-center text-orange-500" style="text-decoration: underline;">
+    <strong>BOOK MY NURSE - PRIVACY POLICY</strong>
+  </h1>
+
+  <p><strong>Effective Date:</strong> July 23, 2025</p>
+
+  <p>This Privacy Policy outlines how <strong>Book My Nurse</strong> ("we," "us," or "our") collects, uses, stores, and protects your personal information. By using our platform and services, you agree to the terms of this policy.</p>
+
+  <p><strong>Contact Us:</strong> <a href="mailto:support&#64;bookmynurse.com">support&#64;bookmynurse.com</a> || <a href="tel:9943234569" onclick="gtag_report_conversion(); return true;">99432 34569</a></p>
+
+  <h2 class="section-title mt-6"><strong>Information We Collect</strong></h2>
+  <p>We collect various types of information to provide and improve our services:</p>
+
+  <p><strong>For Clients:</strong></p>
+  <ol class="list-disc ml-6">
+    <li><strong>Personal Identifiers:</strong> Name, contact number, email address, physical address.</li>
+    <li><strong>Financial Information:</strong> Payment details (processed securely via third-party gateways).</li>
+    <li><strong>Service Preferences:</strong> Details regarding your specific nursing service requirements, medical records (consent-based), and patient condition relevant to service provision.</li>
+  </ol>
+
+  <p><strong>For Nurses:</strong></p>
+  <ol class="list-disc ml-6">
+    <li><strong>Personal Identifiers:</strong> Name, contact number, email address, physical address.</li>
+    <li><strong>Professional Credentials:</strong> Qualifications, experience, certifications, resume/CV.</li>
+    <li><strong>Identity Verification:</strong> Government-issued ID proof (e.g., Aadhaar, PAN), police verification reports.</li>
+    <li><strong>Employment Details:</strong> ESI and EPFO details.</li>
+    <li><strong>Financial Information:</strong> Bank details for payments.</li>
+  </ol>
+
+  <h2 class="section-title mt-6"><strong>How We Use Your Information</strong></h2>
+  <ol class="list-disc ml-6">
+    <li><strong>Service Provision:</strong> To process nurse registrations, facilitate client bookings, and match clients with appropriate nurses.</li>
+    <li><strong>Communication:</strong> To send essential service-related communications, including booking confirmations, updates, service notifications, and emergency alerts.</li>
+    <li><strong>Platform Improvement:</strong> To analyse usage patterns, improve platform functionality, enhance user experience, and develop new services.</li>
+    <li><strong>Legal & Compliance:</strong> To comply with all applicable legal obligations, regolations, and governmental requests.</li>
+    <li><strong>Internal Operations:</strong> For attendance marking, reporting, and internal administrative purposes.</li>
+  </ol>
+
+  <h2 class="section-title mt-6"><strong>Health Care Data Storage and Handling Policy</strong></h2>
+  <p>We are committed to the secure and confidential handling of all healthcare-related data.</p>
+  <ol class="list-disc ml-6">
+    <li><strong>Data Storage:</strong> Your data, including service-related information and patient medical conditions (as provided for service planning), is stored on secure local servers and protected by robust encryption protocols and strict access controls.</li>
+    <li><strong>Access Control:</strong> Access to sensitive information is restricted to authorized personnel only, on a need-to-know basis, for the sole purpose of service delivery and management.</li>
+    <li><strong>Confidentiality:</strong> We maintain the confidentiality of patient files and records. These records are for administrative purposes only and will not be provided directly to customers/patients. Copies may be provided upon explicit management permission and at the customer's expense, ensuring patient confidentiality is maintained.</li>
+    <li><strong>Third-Party Processing:</strong> Sensitive financial information (e.g., payment details) is processed exclusively through trusted and PCI DSS compliant third-party payment gateways. We do not store foll payment card details on our servers.</li>
+    <li><strong>Photographs:</strong> Photographs of ailing persons or wounds, taken by nurses for monitoring medical conditions, are stored securely and used strictly for patient care and administrative tracking of medical improvement. They are treated with the highest level of confidentiality.</li>
+    <li><strong>Data Retention:</strong> We retain your data only for as long as necessary to folfil the purposes for which it was collected, comply with legal obligations, resolve disputes, and enforce our agreements.</li>
+  </ol>
+
+  <h2 class="section-title mt-6"><strong>Data Sharing</strong></h2>
+  <p>We do not sell, rent, or trade your personal information to third parties for their marketing purposes. Your data may be shared under the following circumstances:</p>
+  <ol class="list-disc ml-6">
+    <li><strong>For Service Delivery:</strong> With verified nurses or clients, as necessary, to facilitate the provision of nursing services.</li>
+    <li><strong>Payment Processing:</strong> With authorized third-party payment processors to manage transactions.</li>
+    <li><strong>Legal Compliance:</strong> With legal authorities, government bodies, or law enforcement agencies if required by law, court order, or governmental regolation.</li>
+    <li><strong>Service Providers:</strong> With third-party service providers who assist us in operating our platform and delivering services (e.g., IT support, cloud hosting), under strict confidentiality agreements.</li>
+  </ol>
+
+  <h2 class="section-title mt-6"><strong>Cookies & Tracking Technologies</strong></h2>
+  <p>We may use cookies and similar tracking technologies to:</p>
+  <ol class="list-disc ml-6">
+    <li>Enhance your browsing experience on our platform.</li>
+    <li>Analyse website traffic and user behaviour.</li>
+    <li>Personalize content and advertisements.</li>
+  </ol>
+  <p>You have the option to manage your cookie preferences through your browser settings. However, disabling cookies may affect the functionality of our platform.</p>
+
+  <h2 class="section-title mt-6"><strong>Your Rights</strong></h2>
+  <p>You have the following rights regarding your personal information:</p>
+  <ol class="list-disc ml-6">
+    <li><strong>Access & Review:</strong> You can request access to and review the personal information we hold about you.</li>
+    <li><strong>Correction & Deletion:</strong> You can request corrections to inaccurate data or the deletion of your personal information, subject to legal and contractual obligations.</li>
+    <li><strong>Withdraw Consent:</strong> You can withdraw your consent for data processing where consent is the basis for processing, although this may affect your ability to use certain services.</li>
+  </ol>
+  <p>To exercise any of these rights, please contact us at <a href="mailto:support&#64;bookmynurse.com">support&#64;bookmynurse.com</a> or call us at <a href="tel:9943234569" onclick="gtag_report_conversion(); return true;">99432 34569</a>.</p>
+
+  <h2 class="section-title mt-6"><strong>Third-Party Links</strong></h2>
+  <p>Our platform may contain links to third-party websites or services. We are not responsible for the privacy practices or content of these external sites. We encourage you to review their privacy policies before providing any personal information.</p>
+
+  <h2 class="section-title mt-6"><strong>Policy Updates</strong></h2>
+  <p>We may update this Privacy Policy periodically to reflect changes in our practices or legal requirements. The revised version will be effective immediately upon publication on our platform, indicated by an updated "Effective Date." We encourage you to review this policy regolarly.</p>
+
+  <div class="thank-you mt-6">
+    <p>✅ <strong>Thank you for trusting Book My Nurse.</strong></p>
+  </div>
+</div>
+
+
+
+
+  <!-- Tamil Content -->
+  <div *ngIf="isTamil" class="privacy-policy">
+  <h1 class="text-4xl font-bold mb-8 text-center text-orange-500 underline" style="text-decoration: underline;">
+    <strong>புக் மை நர்ஸ் - தனியுரிமைக் கொள்கை</strong>
+  </h1>
+
+  <p><strong>அமல்படுத்தும் தேதி:</strong> ஜூலை 23, 2025</p>
+
+  <p>இந்த தனியுரிமைக் கொள்கை, <strong>Book My Nurse</strong> ("நாங்கள்", "நமது", அல்லது "நம்மை") உங்கள் தனிப்பட்ட தகவல்களை எவ்வாறு சேகரிக்கிறது, பயன்படுத்துகிறது, பாதுகாக்கிறது என்பதைக் குறிக்கிறது. எங்கள் சேவையைப் பயன்படுத்துவதன் மூலம், நீங்கள் இந்த கொள்கையை ஏற்கிறீர்கள்.</p>
+
+  <div style="margin-bottom: 15px;">
+    <p><strong>தொடர்பு கொள்ள:</strong> 
+      (<a href="mailto:support&#64;bookmynurse.com">support&#64;bookmynurse.com</a> | 
+      <a href="tel:9943234569" onclick="gtag_report_conversion(); return true;">99432 34569</a>)
+    </p>
+  </div>
+
+  <h2 class="section-title mt-6"><strong>நாங்கள் சேகரிக்கும் தகவல்கள்</strong></h2>
+  <p>நாங்கள் சேவைகளை வழங்க மற்றும் மேம்படுத்த பின்வரும் தகவல்களை சேகரிக்கிறோம்:</p>
+
+  <p><strong>வாடிக்கையாளர்களுக்காக:</strong></p>
+  <ol class="list-disc ml-6">
+    <li><strong>தனிப்பட்ட அடையாளங்கள்:</strong> பெயர், தொடர்பு எண், மின்னஞ்சல், வீட்டு முகவரி.</li>
+    <li><strong>நிதி விவரங்கள்:</strong> உங்கள் பில்லிங் மற்றும் கட்டண விவரங்கள் (மூன்றாம் தரப்பு வாயிலாக பாதுகாப்பாக செயல்படுத்தப்படும்).</li>
+    <li><strong>சேவை விருப்பங்கள்:</strong> உங்கள் நர்சிங் சேவை தேவைகள், மருத்துவ பதிவுகள் (ஒப்புதல் அடிப்படையில்), மற்றும் நோயாளியின் நிலை.</li>
+  </ol>
+
+  <p><strong>நர்ஸ்களுக்காக:</strong></p>
+  <ol class="list-disc ml-6">
+    <li><strong>தனிப்பட்ட அடையாளங்கள்:</strong> பெயர், தொடர்பு எண், மின்னஞ்சல், முகவரி.</li>
+    <li><strong>தகுதி மற்றும் அனுபவம்:</strong> கல்வி, வேலை அனுபவம், சான்றிதழ்கள், சுயவிவர விவரங்கள்.</li>
+    <li><strong>அடையாளச் சரிபார்ப்பு:</strong> ஆதார், பான், காவல் துறை சரிபார்ப்பு.</li>
+    <li><strong>வேலை விவரங்கள்:</strong> ESI மற்றும் EPFO தகவல்கள்.</li>
+    <li><strong>நிதி விவரங்கள்:</strong> சம்பள செலுத்தும் வங்கிக் கணக்கு விவரங்கள்.</li>
+  </ol>
+
+  <h2 class="section-title mt-6"><strong>தகவல்களை எவ்வாறு பயன்படுத்துகிறோம்</strong></h2>
+  <ol class="list-disc ml-6">
+    <li><strong>சேவை வழங்கல்:</strong> வாடிக்கையாளர்-நர்ஸ் இணைப்பு, பதிவு செயலாக்கம்.</li>
+    <li><strong>தொடர்பு:</strong> சேவை தொடர்பான தகவல்கள், உறுதிப்படுத்தல்கள் மற்றும் அவசர அலெர்ட்கள்.</li>
+    <li><strong>மேம்படுத்தல்:</strong> பயன்பாட்டு பழக்கங்களை பகுப்பாய்வு செய்து, செயல்திறன் உயர்த்தல்.</li>
+    <li><strong>சட்டப் பின்பற்றல்:</strong> விதிமுறைகள் மற்றும் அரசு கட்டாயங்களுடன் இணக்கம்.</li>
+    <li><strong>உள் நிர்வாகம்:</strong> ஹாஜர் பதிவு, கணக்கு பராமரிப்பு.</li>
+  </ol>
+
+  <h2 class="section-title mt-6"><strong>மருத்துவ தரவுகளின் சேமிப்பு மற்றும் கையாளல் கொள்கை</strong></h2>
+  <ol class="list-disc ml-6">
+    <li><strong>தரவு சேமிப்பு:</strong> உங்கள் மருத்துவ தரவுகள் உள்ளூர் சேவையகங்களில் கடும் பாதுகாப்புடன் சேமிக்கப்படுகிறது.</li>
+    <li><strong>அணுகல் கட்டுப்பாடு:</strong> அதிகாரமுள்ள நபர்களுக்கு மட்டுமே அனுமதி.</li>
+    <li><strong>ரகசியம்:</strong> நோயாளி பதிவுகள் மேலாளர் அனுமதியுடன் மட்டுமே பகிரப்படும்.</li>
+    <li><strong>மூன்றாம் தரப்பு செயலாக்கம்:</strong> நிதி தகவல்கள் பாதுகாப்பான வாயிலாக செயல்படுத்தப்படும் (PCI DSS இணக்கம்).</li>
+    <li><strong>புகைப்படங்கள்:</strong> நோயாளியின் மருத்துவக் கண்காணிப்பிற்காக எடுத்த புகைப்படங்கள் பாதுகாப்பாக வைத்திருக்கும்.</li>
+    <li><strong>தரவு காத்திருத்தல்:</strong> தேவையான காலத்திற்கு மட்டுமே தரவுகள் பராமரிக்கப்படும்.</li>
+  </ol>
+
+  <h2 class="section-title mt-6"><strong>தரவுப் பகிர்வு</strong></h2>
+  <p>நாங்கள் உங்கள் தரவுகளை விற்கவோ, வாடகைக்கு விடவோ இல்லை. ஆனால் பின்வரும் சூழ்நிலைகளில் பகிரப்படலாம்:</p>
+  <ol class="list-disc ml-6">
+    <li><strong>சேவை விநியோகம்:</strong> உறுதிபெற்ற நர்ஸ்கள் அல்லது வாடிக்கையாளர்களுடன்.</li>
+    <li><strong>பணம் செயலாக்கம்:</strong> அங்கீகாரம் பெற்ற கட்டண செயலாக்க நிறுவனங்களுடன்.</li>
+    <li><strong>சட்ட இணக்கம்:</strong> அரசு அதிகாரிகளுடன், அவசியமான சூழ்நிலைகளில்.</li>
+    <li><strong>சேவை வழங்குநர்கள்:</strong> மூன்றாம் தரப்பு IT அல்லது கிளவுட் வழங்குநர்கள், ஒப்பந்தத்தின் அடிப்படையில்.</li>
+  </ol>
+
+  <h2 class="section-title mt-6"><strong>குக்கீகள் மற்றும் கண்காணிப்பு தொழில்நுட்பங்கள்</strong></h2>
+  <p>நாங்கள் பின்வருவனவற்றிற்காக குக்கீக்களைப் பயன்படுத்தலாம்:</p>
+  <ol class="list-disc ml-6">
+    <li>உங்கள் உலாவல் அனுபவத்தை மேம்படுத்த.</li>
+    <li>பயன்பாட்டு மற்றும் செயல்திறன் தரவுகளை பகுப்பாய்வு செய்ய.</li>
+    <li>தனிப்பயனாக்கப்பட்ட உள்ளடக்கம் மற்றும் விளம்பரங்களை வழங்க.</li>
+  </ol>
+  <p>உங்கள் உலாவியில் குக்கீ விருப்பங்களை மேலாண்மை செய்யலாம். ஆனால் முடக்கியால் சில செயல்பாடுகள் பாதிக்கப்படலாம்.</p>
+
+  <h2 class="section-title mt-6"><strong>உங்கள் உரிமைகள்</strong></h2>
+  <p>உங்களுக்குள்ள உரிமைகள்:</p>
+  <ol class="list-disc ml-6">
+    <li><strong>அணுகல் மற்றும் பரிசீலனை:</strong> உங்கள் தனிப்பட்ட தரவுகளை பார்வையிட முடியும்.</li>
+    <li><strong>திருத்தம் மற்றும் நீக்கம்:</strong> தவறான தகவல்களை திருத்த/நீக்க கோரலாம்.</li>
+    <li><strong>ஒப்புதல் திரும்பப் பெறல்:</strong> ஒப்புதல் அடிப்படையில் வழங்கப்பட்ட தகவல்களை கைவிடலாம்.</li>
+  </ol>
+  <p>உங்கள் உரிமைகளை பயன்படுத்த, <a href="mailto:support&#64;bookmynurse.com">support&#64;bookmynurse.com</a> என்ற மின்னஞ்சலுக்கு எழுதலாம் அல்லது <a href="tel:9943234569" onclick="gtag_report_conversion(); return true;">99432 34569</a> என்ற எண்ணில் அழைக்கலாம்.</p>
+
+  <h2 class="section-title mt-6"><strong>மூன்றாம் தரப்பு இணையதளங்கள்</strong></h2>
+  <p>எங்கள் தளத்தில் உள்ள சில இணைப்புகள் வெளி தளங்களாக இருக்கலாம். அவற்றின் தனியுரிமைக் கொள்கைக்கு நாங்கள் பொறுப்பல்ல.</p>
+
+  <h2 class="section-title mt-6"><strong>கொள்கை மாற்றங்கள்</strong></h2>
+  <p>நாங்கள் இந்த கொள்கையை காலம்தோறும் புதுப்பிக்கலாம். புதிய தேதி உடன் இணையதளத்தில் அறிவிக்கப்படும். தளத்தை பார்வையிடும்போது ஒவ்வொரு முறையும் கொள்கையை சரிபார்க்க பரிந்துரைக்கப்படுகிறது.</p>
+
+  <div class="thank-you mt-6">
+    <p>✅ <strong>Book My Nurse</strong> மீது நம்பிக்கை வைத்ததற்கு நன்றி.</p>
+  </div>
+</div>
+
+
+
+</div>
+
+<app-footer></app-footer>

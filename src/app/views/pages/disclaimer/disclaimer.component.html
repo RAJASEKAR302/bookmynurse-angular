@@ -1,0 +1,179 @@
+<app-header></app-header>
+
+<div class="container mx-auto p-8 max-w-5xl bg-white shadow-lg rounded-lg">
+  <div style="text-align: right; margin-bottom: 15px; display: flex; justify-content: flex-end; align-items: center; gap: 8px;">
+    <span style="font-size: 20px; color: orange;">🌐</span>
+    <select (change)="toggleLanguage($event)" 
+            style="background-color: white; color: orange; border: 2px solid orange; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+      <option [selected]="!isTamil" value="en">English</option>
+      <option [selected]="isTamil" value="ta">தமிழ்</option>
+    </select>
+  </div>
+
+  <!-- English Disclaimer Content -->
+  <div *ngIf="!isTamil" class="disclaimer">
+  <h1 class="text-4xl font-bold mb-8 text-center text-orange-500" style="text-decoration: underline;">
+    <b>BOOK MY NURSE - DISCLAIMER FOR CUSTOMERS AND NURSES</b>
+  </h1>
+
+  <p><strong>Effective Date:</strong> J oly 23, 2025</p>
+
+  <p>This Disclaimer outlines the limitations of liability and responsibilities concerning the services provided by Book My Nurse. Please read it caref olly.</p>
+
+  <div style="margin-bottom: 15px;">
+    <p><strong>Contact Us:</strong>
+      (<a href="mailto:support&#64;bookmynurse.com">support&#64;bookmynurse.com</a> |
+      <a href="tel:9943234569" onclick="gtag_report_conversion(); return true;">99432 34569</a>)
+    </p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Verification of Staff</h2>
+    <p>Book My Nurse exercises due diligence in appointing caregivers and staff. All personnel are employed only after thorough verification of their:</p>
+    <ol>
+      <li>Educational certificates</li>
+      <li>Experience certificates</li>
+      <li>Government identification documents</li>
+      <li>Good family background</li>
+      <li>Confirmation of no criminal record (through police verification)</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Limitation of Liability – Book My Nurse</h2>
+    <p>While we take extensive measures to ensure quality, Book My Nurse, its management, directors, proprietors, partners, or employees will <strong>not be responsible for:</strong></p>
+    <ol>
+      <li><strong>Individual Misconduct:</strong> Any incidents of individual misconduct, indecent behaviour, or inappropriate approaches by any appointed person.</li>
+      <li><strong>Theft/Loss of Personal Property:</strong> Loss or theft of personal property and personal belongings of customers or nurses.</li>
+      <li><strong>Valuables:</strong> The loss or theft of any high-value items, gold, money, or other valuables left unsecured in the customer's home. It is the sole <strong>responsibility of the customer</strong> to safely secure such items.</li>
+      <li><strong>Patient's Jewellery:</strong> Any negligence or resolting losses concerning jewellery worn by patients or their relatives must safely store such items.</li>
+      <li><strong>Compensation/Damages:</strong> Any compensation or damages for the loss or theft of valuables from the customer's home.</li>
+      <li><strong>Client Demise:</strong> If a client demises due to illness or any other circumstances, neither Book My Nurse Directors, Proprietors, Partners, nursing staff, nor Management staff will take any responsibility whatsoever.</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Customer Responsibilities</h2>
+    <ol>
+      <li><strong>Security of Valuables:</strong> The customer bears the sole responsibility for securing all valuables within their premises.</li>
+      <li><strong>CCTV Installation:</strong> For the safety of the caregiver working inside the house, it is the customer’s duty to install CCTV cameras in all accessible areas, excluding bathrooms and restrooms.</li>
+      <li><strong>Reporting Theft:</strong> If any caregiver working at the customer's home is found to be involved in theft, the <strong>customer must take direct legal action</strong>, including filing a police complaint, against the caregiver involved. Book My Nurse management will not be responsible for any such incidents.</li>
+      <li><strong>Safe Return of Caregiver Belongings:</strong> Once the caregiver’s duty is completed, it is the sole <strong>responsibility of the customer</strong> to safely return any belongings of the caregiver.</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Direct Engagement of Staff</h2>
+    <ol>
+      <li><strong>Prohibition:</strong> If employees of Book My Nurse are appointed privately by the customer without informing the management, <strong>strict legal action</strong> will be taken.</li>
+      <li><strong>Legal Basis & Penalties:</strong> This includes legal action under the Tamil Nadu Private Nursing Home Act 48/2008 and The Indian Contract Act – 1872, (Amendment) Bill 2024, Proposal (Offer) (2(a)): A Promise Conditional on Acceptance. Penalties for such actions range from <strong>3 to 10 years imprisonment</strong> and fines ranging from <strong>₹10,000 to ₹10 lakhs</strong>.</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Health Care Data Handling Policy</h2>
+    <p><strong>For the purposes of clarity and emphasis, please refer to the dedicated "Health Care Data Storage and Handling Policy" section within our comprehensive Privacy Policy.</strong> This section details our commitment to the secure and confidential management of all healthcare-related data, including patient records and photographs taken for medical monitoring. We adhere to strict encryption, access controls, and confidentiality protocols to protect your sensitive health information.</p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">Acceptance of Terms</h2>
+    <p>By engaging the services of Book My Nurse, you acknowledge that you have read, understood, and agreed to this Disclaimer, alongside the User Agreement and Privacy Policy.</p>
+  </div>
+
+  <div style="margin-top: 20px;">
+    <p>✅ Thank you for choosing <strong>Book My Nurse</strong>.</p>
+  </div>
+</div>
+
+
+  <!-- Tamil Disclaimer Content -->
+  <div *ngIf="isTamil" class="disclaimer">
+  <h1 class="text-4xl font-bold mb-8 text-center text-orange-500" style="text-decoration: underline;">
+    <b>புக் மை நர்ஸ் - வாடிக்கையாளர்களுக்கும் நர்ஸ்களுக்கும் <br>உண்டான பொறுப்புத் துறப்பு (Disclaimer)</b>
+  </h1>
+
+  <p><strong>அமல்படுத்தும் தேதி:</strong> ஜூலை 23, 2025</p>
+
+  <p>இந்த பொறுப்புத் துறப்பு, Book My Nurse வழங்கும் சேவைகளுடன் தொடர்புடைய பொறுப்புகளையும் வரம்புகளையும் விளக்குகிறது. தயவுசெய்து கவனமாக படிக்கவும்.</p>
+
+  <div style="margin-bottom: 15px;">
+    <p><strong>தொடர்பு கொள்ள:</strong>
+      (<a href="mailto:support&#64;bookmynurse.com">support&#64;bookmynurse.com</a> |
+      <a href="tel:9943234569" onclick="gtag_report_conversion(); return true;">99432 34569</a>)
+    </p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">பணியாளர்களின் சரிபார்ப்பு</h2>
+    <p>Book My Nurse நிறுவனம் பணியாளர்களை நியமிக்கும் போது பின்வரும் ஆவணங்களை முழுமையாகச் சரிபார்க்கும்:</p>
+    <ol>
+      <li>கல்வி சான்றிதழ்கள்</li>
+      <li>அனுபவ சான்றிதழ்கள்</li>
+      <li>அரசு அடையாள ஆவணங்கள்</li>
+      <li>நல்ல குடும்ப பின்னணி</li>
+      <li>குற்றப் பதிவுகள் இல்லையென்று காவல் துறையின் உறுதிப்பத்திரம்</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">பொறுப்புத் தவிர்ப்பு – Book My Nurse</h2>
+    <p>Book My Nurse மற்றும் அதன் நிர்வாகம், இயக்குநர்கள், பங்குதாரர்கள் மற்றும் ஊழியர்கள் பின்வருவவற்றுக்கு <strong>பொறுப்பல்ல:</strong></p>
+    <ol>
+      <li><strong>தனிப்பட்ட தவறுகள்:</strong> நியமிக்கப்பட்ட ஊழியர்களின் தவறான நடத்தை, அனாகரீகமான செயல், அல்லது மறுக்கத்தக்க அணுகுமுறைகள்.</li>
+      <li><strong>சொத்துகள் இழப்பு:</strong> வாடிக்கையாளர்கள் மற்றும் நர்ஸ்களின் சொந்த உடைமைகளின் இழப்பு அல்லது திருட்டு.</li>
+      <li><strong>மதிப்புமிக்க பொருட்கள்:</strong> தங்கம், பணம் போன்ற மதிப்புள்ள பொருட்கள் பாதுகாப்பின்றி வைக்கப்பட்டால் இழப்புக்கு வாடிக்கையாளர்கள் மட்டும் பொறுப்பாளிகள்.</li>
+      <li><strong>நகைகளுக்கான பொறுப்பு:</strong> நோயாளிகள் அல்லது அவர்களது உறவினர்கள் அணிந்துள்ள நகைகள் இழப்புக்கு நிறுவனம் பொறுப்பல்ல.</li>
+      <li><strong>ஈடுகள்/பரிசீலனைகள்:</strong> இழந்த சொத்துகளுக்கு Book My Nurse எந்தவொரு இழப்பீடு வழங்குவதில்லை.</li>
+      <li><strong>வாடிக்கையாளர் மரணம்:</strong> நோயாளியின் மரணம் ஏற்பட்டால் நிறுவனத்திற்கோ அதன் ஊழியர்களிற்கோ பொறுப்பு இல்லை.</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">வாடிக்கையாளரின் பொறுப்புகள்</h2>
+    <ol>
+      <li><strong>விலைமிக்க பொருட்களை பாதுகாத்தல்:</strong> வாடிக்கையாளர்களே தங்கள் சொத்துக்களை பாதுகாக்க முழுமையாக பொறுப்பு வகிக்க வேண்டும்.</li>
+      <li><strong>CCTV அமைப்பது:</strong> இல்லத்தின் அனைத்துப் பகுதிகளிலும் (கழிப்பறைகளைத் தவிர) கண்காணிப்பு கேமரா நிறுவ வேண்டும்.</li>
+      <li><strong>திருட்டை புகாரளித்தல்:</strong> திருட்டு நடந்தால், வாடிக்கையாளர் நேரடியாக காவல் நிலையத்தில் புகார் அளிக்க வேண்டும். நிறுவனம் அதற்கு பொறுப்பல்ல.</li>
+      <li><strong>பணியாளரின் உடைமைகளை பத்திரமாக ஒப்படைத்தல்:</strong> பணிக்காலம் முடிந்த பிறகு, நர்ஸின் உடைமைகளை பத்திரமாக திருப்பி கொடுப்பது வாடிக்கையாளரின் பொறுப்பு.</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">பணியாளர்களை நேரடியாக நியமித்தல்</h2>
+    <ol>
+      <li><strong>தடை:</strong> Book My Nurse நிறுவன ஊழியர்களை, நிர்வாக அனுமதியின்றி நேரடியாக நியமிக்கக்கூடாது. தவறான நியமனத்திற்கு சட்ட நடவடிக்கை எடுக்கப்படும்.</li>
+      <li><strong>சட்டப்பூர்வ நடவடிக்கை:</strong> தமிழ்நாடு தனியார் நர்சிங் ஹோம் சட்டம் 48/2008 மற்றும் இந்திய ஒப்பந்தச் சட்டம் – 1872, திருத்தம் 2024 இன் கீழ் 3 முதல் 10 ஆண்டுகள் சிறை மற்றும் ₹10,000 முதல் ₹10 லட்சம் வரை அபராதம் விதிக்கப்படும்.</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">மருத்துவ தரவுகளின் கையாளல் கொள்கை</h2>
+    <p>
+      <strong>மேலும் தெளிவுக்காக, தயவுசெய்து எங்கள் தனியுரிமைக் கொள்கையில் உள்ள 
+      "மருத்துவ தரவுகள் சேமிப்பு மற்றும் கையாளல் கொள்கை" பிரிவைப் பார்வையிடவும்.</strong> 
+      நோயாளி தொடர்பான மருத்துவப் புகைப்படங்கள் மற்றும் பதிவுகள் பாதுகாப்புடன் வைத்திருப்பது குறித்து அதில் முழுமையான விளக்கம் உள்ளது. 
+      மிகுந்த பாதுகாப்பும், அனுமதி அடிப்படையிலான அணுகலும், ரகசிய தன்மையுடன் பராமரிக்கப்படும்.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2 class="section-title">விதிமுறைகளின் ஒப்புதல்</h2>
+    <p>
+      Book My Nurse சேவைகளைப் பயன்படுத்துவதன் மூலம், நீங்கள் இந்த பொறுப்புத் துறப்பையும், பயனர் ஒப்பந்தத்தையும், 
+      தனியுரிமைக் கொள்கையையும் வாசித்து புரிந்து, ஒப்புக்கொள்கிறீர்கள் என்பதை உறுதிப்படுத்துகிறீர்கள்.
+    </p>
+  </div>
+
+  <div style="margin-top: 20px;">
+    <p>✅ <strong>Book My Nurse</strong> ஐ தேர்வு செய்ததற்கு நன்றி.</p>
+  </div>
+</div>
+
+
+</div>
+
+<app-footer></app-footer>
+
+
+
+ 

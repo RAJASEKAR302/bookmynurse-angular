@@ -1,0 +1,966 @@
+<app-header></app-header>
+<section class="section-search py-5" id="home">
+
+	<div class="bg-slideshow">
+		<img src="../../../../assets/img/BMNForm.png" alt="Book My Nurse, Online Nurse Booking, Book a Nurse"
+			class="bg-img img1">
+		<img src="../../../../assets/img/bmn(2).png" alt="Book My Nurse, Nurse Booking Onine, Home Nursing"
+			class="bg-img img2">
+		<img src="../../../../assets/img/BMNForm3.png"
+			alt="Book My Nurse, Home Nursing Services, Professional Health Care at Home" class="bg-img img3">
+	</div>
+
+	<div class="container">
+		<div class="row align-items-center">
+			<!-- Form on the left -->
+			<div class="col-md-12 form-card d-flex align-items-stretch">
+				<div class="card p-4 shadow animated fadeInLeft w-100"
+					style="background-color: #ffffff; border-radius: 10px;">
+					<!-- Heading -->
+					<div class="text-center mb-3">
+						<h1 class="fw-bold mb-2" style="color: #048990;">
+							<b class="welcome">Welcome to Book<span style="color: #f36302;">My</span>Nurse.Com</b>
+						</h1>
+						<p class="text-muted fs-6 fw-bold mb-2">
+							<span>Choose the <span class="nurse">"Right Nurses"</span> for your loved ones.</span>
+						</p>
+					</div>
+					<!-- Booking Form -->
+					<form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+						<div class="mb-2 d-flex align-items-center">
+							<label for="name" class="form-label fw-bold mb-0" style="width: 120px;">Name</label>
+							<input autocomplete="off" formControlName="name" type="text" id="name" class="form-control"
+								placeholder="Please Enter your name" required>
+						</div>
+						<div class="mb-2">
+							<div class=" d-flex align-items-center">
+								<label for="mobile" class="form-label fw-bold mb-0" style="width: 120px;">Mobile</label>
+								<input autocomplete="off" formControlName="mobile" type="tel" id="mobile"
+									class="form-control" placeholder="Please Enter your mobile number" pattern="\d{10}"
+									maxlength="10" required onkeypress="return /[0-9]/.test(event.key)">
+							</div>
+							<div class="text-danger mobile-error-msg"
+								*ngIf="f['mobile'].touched && f['mobile'].invalid">
+								<div *ngIf="f['mobile'].errors['required']">
+									Mobile number is required
+								</div>
+								<div *ngIf="f['mobile'].errors['pattern']">
+									Length should be 10
+								</div>
+								<div class="text-danger" *ngIf="f['mobile'].touched && f['mobile'].invalid">
+
+									<div *ngIf="f['mobile'].errors?.['spamNumber']">
+										Invalid or spam mobile number. Please enter a valid 10-digit number <br>
+										starting with 6–9.
+									</div>
+								</div>
+
+							</div>
+						</div>
+						<div class="mb-2 d-flex align-items-center">
+							<label for="nurseType" class="form-label fw-bold mb-0" style="width: 120px;">Looking
+								for</label>
+							<select formControlName="nurseType" id="nurseType" class="form-select" required>
+								<option value="" selected>Select</option>
+								<option value="Male">Male Nurse</option>
+								<option value="Female">Female Nurse</option>
+							</select>
+						</div>
+						<div class="mb-2 d-flex align-items-center">
+							<label for="location" class="form-label fw-bold mb-0" style="width: 120px;">City</label>
+							<input autocomplete="off" formControlName="location" type="text" id="location"
+								class="form-control" placeholder="Please Enter your City" required>
+						</div>
+						<div class="mb-2 d-flex align-items-center">
+							<label for="services" class="form-label fw-bold mb-0" style="width: 120px;">Services</label>
+							<select formControlName="services" class="form-select" required>
+								<option value="" selected>Select</option>
+								<option value="Elder Care">Elder Care</option>
+								<option value="Bedridden Patient Care">Bedridden Patient Care</option>
+								<option value="Stroke Patient Care">Stroke Patient Care</option>
+								<option value="Tracheostomy Patient Care">Tracheostomy Patient Care</option>
+								<option value="Post Operative Care">Post Operative Care</option>
+								<option value="ICU Setup at Home">ICU Setup at Home</option>
+								<option value="Physiotherapy at Home">Physiotherapy at Home</option>
+								<option value="Travel Nurse">Travel Assist</option>
+								<option value="Doctor's Visit at Home">Doctor's Visit at Home</option>
+							</select>
+						</div>
+						<div class="mb-2 d-flex align-items-center">
+							<label for="preferences" class="form-label fw-bold mb-0">Service options</label>
+							<select style="margin-left: 8px;" formControlName="preferences" id="preferences"
+								class="form-select" required>
+								<option value="" selected>Select</option>
+								<option value="24hrs">24 Hours</option>
+								<option value="12hrs">12 Hours</option>
+								<option value="8hrs">8 Hours</option>
+								<option value="4hrs">4 Hours</option>
+								<option value="Care"
+									title="Morning care 1 Hour&#10;Evening care 1 Hour&#10;IM/IV – Injection&#10;Wound Dressing&#10;Nursing Procedure&#10;">
+									Care ℹ️<span style="font-size: 48px; color: red;"></span> </option>
+							</select>
+						</div>
+						<div class="form-check mt-3">
+							<input formControlName="agreement" class="form-check-input" type="checkbox" id="agreement"
+								required>
+							<label class="form-check-label fw-bold" for="agreement" style="color: #048990;">
+								I have read and agree to the
+								<a routerLink="/user-agreement" target="_blank"
+									style="color: #f36302; text-decoration: underline;">user agreement</a>
+								and
+								<a routerLink="/privacy-policy" target="_blank"
+									style="color: #f36302; text-decoration: underline;">privacy policy</a>.
+							</label>
+						</div>
+						<div class="mt-3">
+							<button type="submit" class=" w-100 custom-submit-button"
+								[disabled]="!bookingForm.valid">Submit</button>
+						</div>
+					</form>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+<section class="section section-specialities py-4" style="background: linear-gradient(120deg, #f0f4f7, #d9e2ec);">
+	<div class="container-fluid">
+		<div class="row">
+			<!-- Left Content -->
+			<div class="col-md-8">
+				<div class="section-header">
+					<h3 style="text-align: center;"><b>Premium Nursing Care Services at Home</b></h3>
+
+					<p class="sub-title">
+						At <b>BookMyNurse</b>, we take pride in delivering exceptional <b>home nursing care</b> with
+						professionalism and compassion. Since our establishment in <b>2012</b>, we have provided trusted
+						medical support to <b>over 100,000 patients</b>, earning their confidence through dedicated and
+						personalized care.
+					</p>
+
+					<p class="sub-title">
+						With <b>eight</b> strategically located branches across <b>Chennai, Pondicherry, Trichy,
+							Thanjavur, Madurai, Tirunelveli, Tiruppur, and Coimbatore</b>, we ensure accessible,
+						high-quality care while continuously expanding our reach to serve patients nationwide.
+					</p>
+
+					<p class="sub-title">
+						Booking our services is quick and effortless—simply <b>call</b>:<b><a href="tel:9943234569" onclick="gtag_report_conversion(); return true;">[99432 34569]</a></b>, and our
+						team will ensure you receive the highest standard of nursing care in the comfort of your home.
+					</p>
+				</div>
+
+				<div class="decorative-divider">
+					<span>✦✦✦</span>
+				</div>
+			</div>
+
+			<!-- Right Content -->
+			<div class="col-md-4 d-flex align-items-center justify-content-center">
+				<div class="bg-info text-dark p-4 rounded shadow text-center w-100">
+					<h2 class="fw-bold"><b>Nurse Registration</b></h2>
+					<p class="rk">Register now to join the BookMyNurse platform.</p>
+					<a routerLink="/nurses-registration" class="btn btn-light btn-lg mt-3 text-dark fw-bold">
+						Register Now
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+<section class="section section-doctor">
+	<!-- About Us Section
+	<div class="row mb-4">
+		<div class="col-12 text-center">
+			<h1 class="us"><b>About Us</b></h1>
+		</div>
+	</div> -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-4">
+				<div class="card bg-light border-0 shadow">
+					<div class="card-header bg-info text-white text-center p-3">
+						<h2 class="mb-0"><b>BookMyNurse</b></h2>
+					</div>
+					<div class="card-body p-3">
+						<p class="card-text text-center" style="margin-bottom: 10px;">
+							<b>Welcome to BookMyNurse: <br> Your Trusted Partner in Home Healthcare</b>
+						</p>
+						<div class="about-content">
+							<p>
+								At <b>BookMyNurse</b>, we believe exceptional healthcare should be <b>accessible,
+									personalized, and delivered with compassion</b>. Our team of <b>highly skilled and
+									experienced nurses</b> is dedicated to <b>providing premium, patient-centered
+									care</b> tailored to your unique needs.
+							</p>
+							<p>
+								Whether you require <b>post-operative care, chronic disease management, elderly support,
+									or specialized medical assistance</b>, our qualified professionals are here to
+								ensure your <b>comfort, safety, and recovery</b> in the familiar surroundings of your
+								home.
+							</p>
+							<p>
+								With <b>easy online booking</b>, you can quickly secure the services of a trusted nurse,
+								bringing <b>expert care and peace of mind</b> right to your doorstep.
+							</p>
+							<p id="about-us">
+								Experience the <b>difference of professional home healthcare</b>—where your well-being
+								is our priority.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-8">
+				<div class="doctor-slider slider" *ngIf="users && users.length > 0; else comingSoon">
+					<div class="profile-widget" *ngFor="let user of users">
+						<div class="doc-img">
+							<a routerLink="/nurse-booking">
+								<img class="img-fluid" alt="User Image"
+									[src]="user.gender === 'male' ? 'assets/img/doctors/doctor-02.jpg' : 'assets/img/doctors/doctor-03.jpg'">
+
+							</a>
+							<!-- <a href="javascript:void(0)" class="fav-btn">
+								<i class="far fa-bookmark"></i>
+							</a> -->
+						</div>
+						<div class="pro-content">
+							<h3 class="title">
+								<a routerLink="/nurse-booking">{{ user.name }}</a>
+								<i class="fas fa-check-circle verified"></i>
+							</h3>
+							<p class="speciality">{{ user.education }}</p>
+							<ul class="available-info">
+								<li>
+									<i class="fas fa-map-marker-alt"></i> {{ user.address }}
+								</li>
+								<li>
+									<i class="far fa-clock"></i> Available for {{ user.serviceopt }}
+								</li>
+								<li>
+									<i class="fas fa-medkit"></i> Specialization: {{ user.specialization }}
+								</li>
+								<div id="about-us"></div>
+								<li>
+									<i class="fas fa-language"></i> Languages Known: {{ user.languages.join(', ') }}
+								</li>
+							</ul>
+							<div class="row row-sm text-center">
+								<div class="col-12">
+									<!-- <a routerLink="/nursebooking" class="btn view-btn">View Profile</a> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<ng-template #comingSoon>
+					<div class="coming-soon-wrapper">
+					<div class="coming-soon-card">
+						<img src="assets/img/BMN - Nurse.png" alt="Coming Soon" class="coming-soon-image">
+						<h2 class="coming-soon-title">Nurses Coming Soon!</h2>
+						<p class="coming-soon-text">Our team is onboarding skilled and compassionate nurses. Please check back shortly to book the best care for your loved ones.</p>
+					</div>
+					</div>
+				</ng-template>
+
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<section id="about-section" class="about-section-1 pt-10">
+	<div class="text-center">
+		<h3 class="text-skyblue us"><b>About Us</b></h3>
+	</div>
+	<!-- About-flex -->
+	<div class="">
+		<div class="row">
+			<div class="col-lg-6"
+				style="flex: 1 1 45%; min-width: 300px; display: flex; align-items: center; justify-content: flex-end; padding: 20px;">
+				<img src="assets/img/bmn-aboutus.png" alt="Healthcare Image"
+					style="width: 100%; max-width: 100%; height: auto; border-radius: 8px; border: 2px solid #13A7F1;">
+			</div>
+
+			<!--  -->
+			<div class="about-content-1 text-center col-lg-6">
+				<div class="section-title mb-30">
+					<h3 class="mt-2 text-subtitle wow fadeInUp" data-wow-delay=".4s">
+						<b class="">Welcome to BookMyNurse  <br> Your Trusted Home Healthcare Partner in Chennai</b>
+					</h3>
+				</div>
+
+				<p class="mb-35 wow fadeInUp" data-wow-delay=".6s">
+					At <b>BookMyNurse</b>, we take pride in being Chennai’s <b>premier provider of professional home
+						nursing care</b>.
+					With a strong presence across Tamil Nadu, our Chennai branch reflects our unwavering commitment to
+					delivering
+					<b>exceptional, personalized healthcare</b> in the comfort of your home.
+				</p>
+
+				<h3 class="mb-10 wow fadeInUp text-subtitle text-center" data-wow-delay=".6s">
+					<b>Why Choose BookMyNurse?</b>
+				</h3>
+
+				<div class="d-flex about-subcontent">
+					<h4><i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i></h4>
+					<p class="mb-10 wow fadeInUp text-start" data-wow-delay=".6s">
+						<b class="about-down-1">Local Expertise, Global Standards:</b> Our Chennai team combines
+						<b>in-depth local knowledge</b> with <b>internationally benchmarked care protocols</b>, ensuring
+						the highest quality of service tailored to the community’s needs.
+					</p>
+				</div>
+				<!--  -->
+				<div class="d-flex about-subcontent">
+					<h4><i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i></h4>
+					<p class="mb-10 wow fadeInUp text-start" data-wow-delay=".6s">
+						<b class="about-down-1">Comprehensive Care for All Ages:</b> From <b>pediatric care (1+
+							years)</b> to
+						<b>geriatric support (100+ years)</b>, we offer specialized nursing services for every life
+						stage.
+					</p>
+				</div>
+				<!--  -->
+				<div class="d-flex about-subcontent">
+					<h4><i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i></h4>
+					<p class="mb-10 wow fadeInUp text-start" data-wow-delay=".6s">
+						<b class="about-down-1">Highly Skilled & Compassionate Nurses:</b> Our <b>rigorously trained
+							nursing professionals</b>
+						are selected for their <b>expertise, empathy, dedication</b>.
+					</p>
+				</div>
+				<!--  -->
+				<div class="d-flex about-subcontent">
+					<h4><i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i></h4>
+					<p class="mb-10 wow fadeInUp text-start" data-wow-delay=".6s">
+						<b class="about-down-1">Citywide Accessibility:</b> Wherever you are in Chennai, <b>dependable
+							nursing care</b>
+						is just a call away.
+					</p>
+				</div>
+				<!--  -->
+				<div class="d-flex about-subcontent">
+					<h4><i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i></h4>
+					<p class="mb-10 wow fadeInUp text-start" data-wow-delay=".6s">
+						<b class="about-down-1">Transparent & Ethical Service:</b> Honesty and clear communication are
+						at our core.
+						Our team provides <b>trusted guidance</b> at every step.
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+		<!--  -->
+
+	</div>
+
+	<!-- About-flex -->
+
+
+	<div id="services" class="about-img text-center mt-4">
+		<img src="assets/img/Our Strength.png" alt="Our Strengths, Chennai Home Nursing" class="ourstrength">
+	</div>
+</section>
+
+
+<section class="service-section pt-50">
+	<div class="container">
+
+		<div class="section-title text-center mb-55">
+			<span class="wow fadeInDown" data-wow-delay=".2s">
+				<b class="us">Services</b>
+			</span>
+		</div>
+
+		<div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between;">
+
+			<!-- Left Content Box -->
+			<div style="flex: 1 1 50%; min-width: 300px; padding: 30px 30px 30px 0; text-align: left;">
+				<h2 class="section-titles">
+					Comprehensive Home Healthcare Solutions by
+					<span> BookMyNurse</span>
+				</h2>
+
+				<p style="font-size: 16px; line-height: 1.7; color: #555; margin-bottom: 20px; text-align: justify;">
+					At <b>BookMyNurse</b>, we deliver <b>integrated, patient-centered home healthcare</b> through a
+					multidisciplinary team of experienced professionals. Our network includes:
+				</p>
+
+				<div class="service-list-wrapper">
+					<div class="service-list">
+						<div class="d-flex">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<h6><b>Qualified Doctors</b> for expert medical supervision</h6>
+						</div>
+						<div class="d-flex">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<h6><b>Skilled Nurses</b> providing compassionate, round-the-clock care</h6>
+						</div>
+						<div class="d-flex">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<h6><b>Certified Physiotherapists</b> for rehabilitation support</h6>
+						</div>
+						<div class="d-flex">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<h6><b>Partner Pharmacies</b> ensuring timely medication delivery</h6>
+						</div>
+						<div class="d-flex">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<h6><b>Accredited Laboratories & Diagnostics</b> for convenient testing</h6>
+						</div>
+
+					</div>
+					<!-- <ul class="service-list">
+						<li><b>Qualified Doctors</b> for expert medical supervision</li>
+						<li><b>Skilled Nurses</b> providing compassionate, round-the-clock care</li>
+						<li><b>Certified Physiotherapists</b> for rehabilitation support</li>
+						<li><b>Partner Pharmacies</b> ensuring timely medication delivery</li>
+						<li><b>Accredited Laboratories & Diagnostics</b> for convenient testing</li>
+					</ul> -->
+				</div>
+
+
+				<p style="font-size: 15px; line-height: 1.7; color: #555; text-align: justify;">
+					Through <b>strategic collaborations with leading multispecialty hospitals</b>, we bridge the gap
+					between clinical excellence and home-based care. This seamless ecosystem allows patients to receive
+					<b>hospital-grade treatment</b> in the comfort and safety of their homes.
+				</p>
+			</div>
+
+			<!-- Right Image Box -->
+			<div class="Services-img"
+				style="flex: 1 1 45%; min-width: 300px; display: flex; align-items: center; justify-content: flex-end; padding: 20px;">
+				<img src="assets/img/bmn-services.png" alt="Healthcare Image"
+					style="width: 100%; max-width: 100%; height: auto; border-radius: 8px; border: 2px solid #13A7F1;">
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
+
+
+<section class="bg-white service-section pt-50">
+	<div class="container">
+		<div class="row">
+			<!-- <div class="col-xl-8 mx-auto" style="padding-top: 50px; padding-bottom: 50px;">
+ <div class="section-title text-center mb-55">
+
+    <span class="wow fadeInDown" data-wow-delay=".2s">
+      <b class="us">Services</b>
+    </span>
+
+    <h2 class="mb-15 wow fadeInUp" data-wow-delay=".4s" style="margin: 25px 0; font-size: 32px; font-weight: bold; color: #333; line-height: 1.4;">
+      Comprehensive Home Healthcare Solutions by <span style="color: #f97316;">BookMyNurse</span>
+    </h2>
+
+    <p class="wow fadeInUp" data-wow-delay=".6s" style="max-width: 900px; margin: 0 auto 25px auto; font-size: 18px; line-height: 1.8; color: #444;">
+      At <b>BookMyNurse</b>, we deliver <b>integrated, patient-centered home healthcare</b> through a multidisciplinary team of experienced professionals. Our network includes:
+    </p>
+
+    <div class="wow fadeInUp service-list-content" data-wow-delay=".6s" style="text-align: left; display: inline-block; max-width: 900px; font-size: 17px; line-height: 1.8; color: #444;">
+	<ul style="list-style-type: none; padding-left: 0; margin: 0;">
+		<li style="margin-bottom: 10px;">✔ <b>Qualified Doctors</b> for expert medical supervision</li>
+		<li style="margin-bottom: 10px;">✔ <b>Skilled Nurses</b> providing compassionate, round-the-clock care</li>
+		<li style="margin-bottom: 10px;">✔ <b>Certified Physiotherapists</b> for rehabilitation support</li>
+		<li style="margin-bottom: 10px;">✔ <b>Partner Pharmacies</b> ensuring timely medication delivery</li>
+		<li style="margin-bottom: 10px;">✔ <b>Accredited Laboratories & Diagnostics</b> for convenient testing</li>
+	</ul>
+	</div>
+
+
+    <p class="wow fadeInUp" data-wow-delay=".6s" style="max-width: 900px; margin: 25px auto 0 auto; font-size: 17px; line-height: 1.8; color: #444;">
+      Through <b>strategic collaborations with leading multispecialty hospitals</b>, we bridge the gap between clinical excellence and home-based care. This seamless ecosystem allows patients to receive <b>hospital-grade treatment</b> in the comfort and safety of their homes.
+    </p>
+
+  </div>
+</div> -->
+
+		</div>
+		<div class="row g-5">
+
+			<div class="col-lg-4 col-md-6 service-content">
+				<div class="service-item">
+					<div class="service-icon mb-4">
+						<img src="assets/img/about-us/elder-care.png" class="rounded service-img"
+							alt="Elder Care Services, Senior Care Services at Home">
+					</div>
+					<h6 class="elder"><b>Professional elder care at home for safe, dignified living, including</b></h6>
+					<div style="list-style: none; padding-left: 0; text-align: left;">
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p class="align-items-center">Medication management</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Assistance with daily activities <br>(bathing, dressing, mobility)</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p class="">Personalized meal preparation</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>24/7 safety monitoring</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Companionship & emotional support</p>
+						</div>
+
+
+
+					</div>
+					<!-- <ul style="list-style: none; padding-left: 0;">
+						<li><i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i> Medication management</li>
+						<li>Assistance with daily activities <br>(bathing, dressing, mobility)</li>
+						<li>Personalized meal preparation</li>
+						<li>24/7 safety monitoring</li>
+						<li>Companionship & emotional support</li>
+					</ul> -->
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 service-content">
+				<div class="service-item">
+					<div class="service-icon mb-4">
+						<img src="assets/img/about-us/bedridden-patient-care.png" class="rounded service-img"
+							alt="Bedridden Patient Care at Home, Book My Nurse">
+					</div>
+					<h6 class="elder"><b>Expert round-the-clock bedridden care with compassion and dignity,
+							including</b></h6>
+					<div style="list-style: none; padding-left: 0; text-align: left;">
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Nursing & hygiene support</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Medication & vital monitoring</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Assisted feeding & nutrition</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Pressure sore prevention</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Detailed health reporting</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 service-content">
+				<div class="service-item">
+					<div class="service-icon mb-4">
+						<img src="assets/img/about-us/stroke-patient-care.png" class="rounded service-img"
+							alt="Stroke Patient Care at Home">
+					</div>
+					<h6 class="elder"><b>Professional stroke rehab at home for faster recovery and independence,
+							including</b></h6>
+					<div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Mobility & speech therapy support</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Medication & vital monitoring</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Daily living & hygiene assistance</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Progress tracking & family updates</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 service-content">
+				<div class="service-item">
+					<div class="service-icon mb-4">
+						<img src="assets/img/about-us/tracheostomy-patient-care.png" class="rounded service-img"
+							alt="Tracheostomy Patient Care at Home">
+					</div>
+					<h6 class="elder"><b>Skilled tracheostomy care at home, including</b></h6>
+					<div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Tube & stoma care</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Breathing & suction support</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Infection prevention</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Emergency readiness</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Family training</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 service-content">
+				<div class="service-item">
+					<div class="service-icon mb-4">
+						<img src="assets/img/about-us/post-operative-care.png" class="rounded service-img"
+							alt="Post-Operative Care at Home">
+					</div>
+					<h6 class="elder"><b>Professional post-op nursing care for faster recovery, including</b></h6>
+					<div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Wound & incision care</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Pain management</p>
+						</div> 
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Mobility support</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Vital monitoring</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Personal hygiene help</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 service-content">
+				<div class="service-item">
+					<div class="service-icon mb-4">
+						<img src="assets/img/about-us/icu-setup-at-home.png" class="rounded service-img"
+							alt="ICU Setup at Home">
+					</div>
+					<h6 class="elder"><b>Full ICU-level care at home, including</b></h6>
+					<div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Ventilator & cardiac support</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>24/7 ICU nurses & monitoring</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Infection prevention</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Family training</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 service-content">
+				<div class="service-item">
+					<div class="service-icon mb-4">
+						<img src="assets/img/about-us/physiotherapy-at-home.png" class="rounded service-img"
+							alt="Physiotherapy at Home">
+					</div>
+					<h6 class="elder"><b>Professional home physio for safe recovery, including</b></h6>
+					<div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Pain relief & mobility</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Post-surgery rehab</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Stroke/elderly care</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Balance training</p>
+						</div>
+					</div>
+					<!-- <ul style="list-style: none; padding-left: 0; text-align: left;">
+						<li>Pain relief & mobility</li>
+						<li>Post-surgery rehab</li>
+						<li>Stroke/elderly care</li>
+						<li>Balance training</li>
+					</ul> -->
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 service-content">
+				<div class="service-item">
+					<div class="service-icon mb-4">
+						<img src="../../../../assets/service-images/travel-assists.png" class="rounded service-img"
+							alt="Travel Assists across the World">
+					</div>
+					<h6 class="elder"><b>Global medical travel care, including</b></h6>
+					<div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>International nurse accompaniment</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Seamless care worldwide</p>
+						</div>
+					</div>
+					<!-- <ul style="list-style: none; padding-left: 0; text-align: left;">
+						<li>International nurse accompaniment</li>
+						<li>Seamless care worldwide</li>
+					</ul> -->
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 service-content">
+				<div class="service-item">
+					<div class="service-icon mb-4">
+						<img src="../../../../assets/service-images/doctors-visit-at-home.png"
+							class="rounded service-img" alt="Doctors Visit at Home">
+					</div>
+					<h6 class="elder"><b>Expert home doctor visits with <br>hospital-grade care, including</b></h6>
+					<div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Full checkups & diagnostics</p>
+						</div>
+						<div id="FAQs" class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Chronic/acute care</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Senior health monitoring</p>
+						</div>
+						<div class="d-flex service-box">
+							<i class="fa-solid fa-heart-pulse text-changes mt-1 me-1"></i>
+							<p>Post-hospital support</p>
+						</div>
+					</div>
+
+					<!-- <ul style="list-style: none; padding-left: 0; text-align: left;">
+						<li>Full checkups & diagnostics</li>
+						<li>Chronic/acute care</li>
+						<li>Senior health monitoring</li>
+						<li id="FAQs">Post-hospital support</li>
+					</ul> -->
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</section>
+<div class="container">
+	<div class="wrapper">
+
+		<!-- Left FAQs Box -->
+				<div class="box left-box">
+		<h3 class="text-center text-prime"><b>Frequently Asked Questions</b></h3>
+
+		<div class="faq-item" (click)="openFaq('registration')">
+			<summary>👩‍⚕️ Registration & Booking?</summary>
+		</div>
+
+		<div class="faq-item" (click)="openFaq('services')">
+			<summary>📜 Services & Availability?</summary>
+		</div>
+
+		<div class="faq-item" (click)="openFaq('pricing')">
+			<summary>🕐 Pricing & Payments?</summary>
+		</div>
+
+		<div class="faq-item" (click)="openFaq('support')">
+			<summary>🏠 Support & Safety?</summary>
+		</div>
+		</div>
+
+		<!-- Modal -->
+		<div class="faq-modal" *ngIf="showFaqPopup">
+		<div class="faq-modal-content">
+			<span class="close-btn" (click)="showFaqPopup = false">&times;</span>
+			<h3 class="text-center text-prime"><b>FAQ Details</b></h3>
+			<div [innerHTML]="faqContent"></div>
+		</div>
+		</div>
+
+
+		<!-- Right Partner Box -->
+		<div class="box right-box">
+			<h3 class="text-center text-prime">Our Digital Transformation Partner <br> <span class="consultant">ResQ Consultants</span></h3>
+			<div class="">
+				<div class="row partner-content ms-2">
+					<div class="partner-logo col-lg-6 col-md-6 col-sm-12">
+						<img src="assets/ResQ Logo BLue - Lion Stay Alive.png" alt="ResQ Logo">
+					</div>
+
+					<div class="contact-info col-lg-6 col-md-6 col-sm-12">
+						<div class="d-flex">
+							<i class="fa-solid fa-phone text-prime mt-1 me-3"></i>
+							<h5 class="mb-3"><a href="tel:9244009244"><b> 9244 00 9244</b></a> </h5>
+						</div>
+						<div class="d-flex">
+							<i class="fa-solid fa-tty text-prime mt-1 me-3"></i>
+							<h5 class="mb-3"><a href="tel:04447970529"><b>
+										044 4797 0529</b></a></h5>
+						</div>
+						<div class="d-flex">
+							<i class="fa-solid fa-globe text-prime mt-1 me-3"></i>
+							<h5 class="mb-3"><a href="https://www.resq.sg" target="_blank"><b> www.ResQ.sg</b></a></h5>
+						</div>
+						<div class="d-flex">
+							<i class="fa-solid fa-envelope text-prime mt-1 me-3"></i>
+							<h5 class="mb-3"><a href="mailto:hi@resq.sg"><b> Hi&#64;ResQ.Sg</b></a></h5>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+
+<!-- <section class="office-section">
+	<h3 class="office-heading">8 Physical Offices to Serve you Better</h3>
+	<div class="office-list">
+		<a href="https://www.homenursingchennai.com/" target="_blank" class="office-item">Home Nursing in Chennai</a>
+		<a href="https://www.homenursingtrichy.com/" target="_blank" class="office-item">Home Nursing in Trichy</a>
+		<a href="https://www.homenursingthanjavur.com/" target="_blank" class="office-item">Home Nursing in
+			Thanjavur</a>
+		<a href="https://www.homenursingmadurai.com/" target="_blank" class="office-item">Home Nursing in Madurai</a>
+		<a href="https://www.homenursingcoimbatore.com/" target="_blank" class="office-item">Home Nursing in
+			Coimbatore</a>
+		<a href="https://www.homenursingtirunelveli.com/" target="_blank" class="office-item">Home Nursing in
+			Tirunelveli</a>
+		<a href="https://www.homenursingpondicherry.com/" target="_blank" class="office-item">Home Nursing in
+			Pondicherry</a>
+		<a href="https://www.homenursingtiruppur.com/" target="_blank" class="office-item">Home Nursing in Tiruppur</a>
+	</div>
+</section> -->
+
+<div class="partner-slider-loop">
+	<h2 class="partner-header">
+		<div class="us" style="color: #000;">Our Partners</div>
+	</h2>
+	<div class="slide-track-loop-1">
+
+		<div class="slide-loop-1"><img src="assets/preethi-hospitals-logo.png" alt="Logo 1" /></div>
+		<div class="slide-loop-2"><img src="assets/avn-arogya-ayurvedic-hospital-logo.png" alt="Logo 2" /></div>
+		<div class="slide-loop-3"><img src="assets/bella-premier-logo.png" alt="Logo 3" /></div>
+		<div class="slide-loop-4"><img src="assets/csg-lighthouse-logo.png" alt="Logo 4" /></div>
+		<div class="slide-loop-5"><img src="assets/glb-hospitals-logo.png" alt="Logo 5" /></div>
+		<div class="slide-loop-6"><img src="assets/kauvery-hospital-logo.png" alt="Logo 6" /></div>
+
+		<div class="slide-loop-1"><img src="assets/preethi-hospitals-logo.png" alt="Logo 1" /></div>
+		<div class="slide-loop-2"><img src="assets/avn-arogya-ayurvedic-hospital-logo.png" alt="Logo 2" /></div>
+		<div class="slide-loop-3"><img src="assets/bella-premier-logo.png" alt="Logo 3" /></div>
+		<div class="slide-loop-4"><img src="assets/csg-lighthouse-logo.png" alt="Logo 4" /></div>
+		<div class="slide-loop-5"><img src="assets/glb-hospitals-logo.png" alt="Logo 5" /></div>
+		<div class="slide-loop-6"><img src="assets/kauvery-hospital-logo.png" alt="Logo 6" /></div>
+	</div>
+</div>
+
+
+<div id="successModalss" class="custom-modal">
+	<div class="custom-modal-content">
+		<img src="assets/img/BMN - Nurse.png" alt="Nurse" style="width: 150px; height: auto; margin-bottom: 15px;" />
+		<p style="color: #048990; font-size: 18px; font-weight: bold;">
+			Dear Sir/Madam,
+		</p>
+		<p style="color: #333; font-size: 16px;">
+			Thanks for your enquiry. BookMyNurse team will get back to you at the
+			earliest.
+		</p>
+		<button id="closeModal"
+			style="background-color: #f36302; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;"
+			(click)="redirectToNurse()">
+			Proceed
+		</button>
+	</div>
+</div>
+
+
+<!-- <div class="chat-now" id="chatNowBtn">Chat<br>Now</div> -->
+<div class="chat-now" id="chatNowBtn">Connect</div>
+
+
+<div class="floating-buttons" id="floatingBtns">
+	<a href="https://wa.me/9943234569" target="_blank" class="whatsapp-button">
+		<img src="assets/img/whatsapp-icon.jpeg" alt="WhatsApp">
+	</a>
+	<a href="tel:9943234569" onclick="gtag_report_conversion(); return true;" class="phone-button">
+		<img src="assets/img/phone-icon.jpeg" alt="Call">
+	</a>
+	<button class="referral-button" id="referralBtn">
+		<img src="assets/img/referral-icon.jpeg" alt="Referral">
+	</button>
+</div>
+
+
+<!-- MODAL START -->
+<div class="modal-rel" id="modal-rel">
+	<div class="modal-content-rel">
+		<div class="modal-header-rel">
+			<h3>Refer BookMyNurse</h3>
+			<span class="close-btn" id="closeBtn-rel">&times;</span>
+		</div>
+		<form class="modal-form-rel" id="referralForm"
+			action="https://script.google.com/macros/s/AKfycbzWlXHxugjcpELizoH3BN6NdvhZz2fPx1jz0HSQBo3MgHw_uJXvHnNNNbP2WPAR0ynF/exec"
+			method="post">
+			<input type="text" name="name" placeholder="Please enter your Name" pattern="[A-Za-z\s]+"
+				title="Only letters allowed" required>
+			<input type="tel" name="phone" placeholder="Please enter your Friend’s Mobile No" pattern="\d{10}"
+				maxlength="10" title="10-digit number only" required>
+			<input type="email" name="email" placeholder="Please enter your Friend’s Email ID" required>
+			<button type="submit">Submit</button>
+		</form>
+	</div>
+</div>
+
+<!-- THANK YOU POPUP OUTSIDE MODAL -->
+<div id="thankYouPopup" class="popup-overlay" style="display: none;">
+	<div class="popup-content">
+		<img src="assets/img/BMN - Nurse.png" alt="Nurse" class="nurse-image">
+		<h2><span style="color: #0077b6;">Dear Sir/Madam,</span></h2>
+		<p>We’ve received your referral details successfully.
+			Our team will review the information and reach out to the referred individual shortly.</p>
+		<button id="closePopupBtn">Close</button>
+	</div>
+</div>
+<app-footer></app-footer>
